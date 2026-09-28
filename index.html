@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Veronika Albero — Marketing</title>
+<link rel="icon" href="logo-va.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#22261C"></rect><g transform="translate(27,22) scale(0.55)" fill="#B7A47F"><path d="M30 82 C30 70 34 62 44 55 C50 51 54 46 55 40 C48 45 40 46 34 43 C30 41 28 37 29 33 L20 38 L21 28 L33 22 C37 15 44 11 52 11 L49 4 L57 8 L61 2 L64 10 C72 15 76 24 76 35 C76 55 72 70 68 82 Z"></path><path d="M24 84 H74 V91 H24 Z"></path></g></svg></template>
+<style>
+body{
+  margin:0; background:#F6F2E9; color:#221F19;
+  font-family:'Public Sans',Helvetica,Arial,sans-serif; font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  --ink:#221F19; --soft:#5B564B; --bg:#F6F2E9; --raised:#EFE8D9; --deep:#22261C;
+  --accent:#7C4A28; --accent-strong:#5E3720; --putty:#B7A47F;
+  --line:rgba(34,31,25,0.14); --line-deep:rgba(241,236,221,0.16);
+  --disp:'Fraunces',Georgia,serif; --mono:'IBM Plex Mono',Consolas,monospace;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+img{ max-width:100%; display:block; }
+a{ color:#5E3720; text-decoration-color:rgba(124,74,40,.45); text-underline-offset:3px; }
+a:hover{ color:#7C4A28; text-decoration-color:#7C4A28; }
+::selection{ background:#7C4A28; color:#F6F2E9; }
+@keyframes va-rise{ from{ opacity:0; transform:translateY(22px); } to{ opacity:1; transform:none; } }
+@keyframes va-grow{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+@keyframes va-draw{ from{ stroke-dashoffset:400; } to{ stroke-dashoffset:0; } }
+@keyframes va-marq{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+@keyframes va-pulse{ 0%,100%{ opacity:.35; transform:scale(1); } 50%{ opacity:1; transform:scale(1.35); } }
+@keyframes va-ping{ 0%{ transform:scale(.4); opacity:.9; } 80%,100%{ transform:scale(1.6); opacity:0; } }
+@keyframes va-spin{ to{ transform:rotate(360deg); } }
+@media (prefers-reduced-motion:reduce){ *{ animation:none !important; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F6F2E9;overflow-x:clip;--accent:{{ accent }};--accent-strong:{{ accentStrong }};--putty:{{ putty }}">
+
+<nav style="position:sticky;top:0;z-index:40;background:rgba(246,242,233,.86);backdrop-filter:blur(12px) saturate(1.1);border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin-inline:auto;padding:16px clamp(20px,5vw,64px);display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#top" onClick="{{ goHome }}" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
+      <img src="logo-va.png" alt="VA" style="display:block;height:30px;width:auto;flex:none" />
+      <span style="font-family:'Noto Serif Display',serif;font-weight:500;font-size:1.1rem;white-space:nowrap">Veronika <em style="color:var(--accent)">Albero</em></span>
+    </a>
+    <sc-if value="{{ navWide }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;gap:clamp(12px,3vw,32px);align-items:center;flex-wrap:wrap;justify-content:flex-end;font-family:var(--mono);font-size:clamp(.66rem,2.2vw,.76rem);letter-spacing:.07em;text-transform:uppercase">
+      <a href="#top" onClick="{{ goHome }}" style="text-decoration:none;color:{{ navHome }};padding-bottom:4px;border-bottom:1px solid {{ navHomeLine }}">Home</a>
+      <a href="#top" onClick="{{ goCases }}" style="text-decoration:none;color:{{ navCase }};padding-bottom:4px;border-bottom:1px solid {{ navCaseLine }}">Cases</a>
+      <a href="#top" onClick="{{ goAbout }}" style="text-decoration:none;color:{{ navAbout }};padding-bottom:4px;border-bottom:1px solid {{ navAboutLine }}">Experience</a>
+      <a href="#contact" style="text-decoration:none;color:var(--soft);padding-bottom:4px;border-bottom:1px solid transparent;white-space:nowrap">Contact</a>
+    </div>
+    </sc-if>
+    <sc-if value="{{ navNarrow }}" hint-placeholder-val="{{ false }}">
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" style="display:flex;align-items:center;gap:10px;min-height:44px;padding:0 4px;border:none;background:none;cursor:pointer;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)">{{ menuLabel }}<span aria-hidden="true" style="display:flex;flex-direction:column;gap:5px;width:22px"><span style="height:1px;background:var(--ink)"></span><span style="height:1px;background:var(--ink)"></span></span></button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="border-top:1px solid var(--line);background:var(--bg);padding:8px clamp(20px,5vw,64px) 20px;display:flex;flex-direction:column">
+    <a href="#top" onClick="{{ mGoHome }}" style="display:flex;justify-content:space-between;align-items:center;min-height:56px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-family:var(--disp);font-size:1.4rem">Home<span style="font-family:var(--mono);font-size:.9rem;color:var(--accent)">&rarr;</span></a>
+    <a href="#top" onClick="{{ mGoCases }}" style="display:flex;justify-content:space-between;align-items:center;min-height:56px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-family:var(--disp);font-size:1.4rem">Cases<span style="font-family:var(--mono);font-size:.9rem;color:var(--accent)">&rarr;</span></a>
+    <a href="#top" onClick="{{ mGoAbout }}" style="display:flex;justify-content:space-between;align-items:center;min-height:56px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-family:var(--disp);font-size:1.4rem">Experience<span style="font-family:var(--mono);font-size:.9rem;color:var(--accent)">&rarr;</span></a>
+    <a href="#contact" onClick="{{ closeMenu }}" style="display:flex;justify-content:space-between;align-items:center;min-height:56px;text-decoration:none;color:var(--ink);font-family:var(--disp);font-size:1.4rem">Contact<span style="font-family:var(--mono);font-size:.9rem;color:var(--accent)">&rarr;</span></a>
+  </div>
+  </sc-if>
+</nav>
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<div>
+  <header style="position:relative;max-width:1320px;margin-inline:auto;min-height:calc(100svh - 105px);box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(12px,2.2vh,28px) clamp(20px,5vw,64px) 0">
+    <div aria-hidden="true" style="position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100vw;background-image:url('hero-bg-hi.jpg');background-size:cover;background-position:center 42%;opacity:.3;pointer-events:none"></div>
+    <div aria-hidden="true" style="position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100vw;background:linear-gradient(to bottom,rgba(246,242,233,.15),rgba(246,242,233,.7));pointer-events:none"></div>
+    <div style="position:relative;display:flex;align-items:center;flex-wrap:wrap;row-gap:8px;column-gap:clamp(14px,2vw,24px);margin-bottom:clamp(8px,1.5vh,20px);font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)">
+      <span style="display:inline-flex;align-items:center;gap:10px;white-space:nowrap"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);animation:va-pulse 2.6s ease-in-out infinite"></span>Berlin, Germany</span>
+      <span aria-hidden="true" style="flex:1;height:1px;background:var(--line);min-width:24px"></span>
+      <span style="white-space:nowrap">Available for select projects</span>
+    </div>
+
+    <div style="position:relative;flex:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(20px,4vw,56px);align-items:end">
+      <div style="padding-bottom:clamp(40px,9vh,110px)">
+        <p style="font-family:var(--mono);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:0 0 clamp(8px,1.6vh,18px)">Marketing strategist &middot; Entrepreneur</p>
+        <h1 style="font-family:'Noto Serif Display',serif;font-weight:500;font-size:clamp(2.8rem,min(10vw,12vh),7.4rem);line-height:.92;letter-spacing:-.02em;margin:0">Veronika<br /><span style="font-style:italic;color:var(--accent-strong)">Albero</span></h1>
+        <div style="display:flex;align-items:center;gap:14px;margin-top:clamp(12px,2.2vh,26px)">
+          <span style="width:clamp(40px,8vw,88px);height:1px;background:var(--accent);display:block;transform-origin:left;animation:va-grow 1s cubic-bezier(.2,.7,.2,1) both .2s"></span>
+          <p style="margin:0;max-width:24ch;font-family:var(--disp);font-style:italic;font-size:clamp(1.15rem,min(2.6vw,3.4vh),1.8rem);color:var(--soft);text-wrap:pretty">&ldquo;If I set my mind to it, I make it happen.&rdquo;</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(18px,3.4vh,36px)">
+          <a href="#top" onClick="{{ goCases }}" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;white-space:nowrap;background:var(--ink);color:#F6F2E9;font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);transition:background .25s" style-hover="background:var(--accent-strong);border-color:var(--accent-strong)">View cases &rarr;</a>
+          <a href="#contact" style="display:inline-flex;align-items:center;min-height:48px;padding:0 24px;white-space:nowrap;color:var(--ink);font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);background:rgba(246,242,233,.55);transition:background .25s" style-hover="background:#F6F2E9">Contact me</a>
+        </div>
+      </div>
+      <div style="position:relative;display:flex;justify-content:flex-end;align-items:flex-end">
+        <div style="position:relative;display:block;max-width:100%">
+          <img src="portrait-hero3.webp" alt="Veronika Albero" style="display:block;height:min(calc(100svh - 170px),110vw);max-width:100%;width:auto;object-fit:contain;object-position:right bottom" />
+          <span aria-hidden="true" style="position:absolute;left:0;top:34%;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--accent) 30%);pointer-events:none"></span>
+          <span aria-hidden="true" style="position:absolute;right:0;top:34%;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--accent) 30%);pointer-events:none"></span>
+          <span aria-hidden="true" style="position:absolute;left:0;bottom:0;width:22%;height:1px;background:var(--accent);pointer-events:none"></span>
+          <span aria-hidden="true" style="position:absolute;right:0;bottom:0;width:22%;height:1px;background:var(--accent);pointer-events:none"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div style="border-block:1px solid var(--line);background:var(--bg);overflow:hidden;padding-block:clamp(16px,2vw,22px)">
+    <div style="display:flex;width:max-content;animation:va-marq 48s linear infinite">
+      <div style="display:flex;gap:clamp(22px,3vw,40px);padding-right:clamp(22px,3vw,40px);font-family:var(--disp);font-style:italic;font-size:clamp(1.05rem,1.8vw,1.35rem);color:var(--ink);align-items:center;white-space:nowrap">
+        <span>Strategic thinking</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Business development</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Product development</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Go-to-market</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Marketing strategy</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Project leadership</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Market research</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Team leadership</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span>
+      </div>
+      <div aria-hidden="true" style="display:flex;gap:clamp(22px,3vw,40px);padding-right:clamp(22px,3vw,40px);font-family:var(--disp);font-style:italic;font-size:clamp(1.05rem,1.8vw,1.35rem);color:var(--ink);align-items:center;white-space:nowrap">
+        <span>Strategic thinking</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Business development</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Product development</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Go-to-market</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Marketing strategy</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Project leadership</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Market research</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Team leadership</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span>
+      </div>
+    </div>
+  </div>
+
+  <section data-reveal="1" style="background:var(--deep);color:#F1ECDD">
+    <div style="max-width:1320px;margin-inline:auto;padding:clamp(44px,6vw,80px) clamp(20px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(24px,4vw,40px)" data-counters="1">
+      <div style="border-left:1px solid var(--line-deep);padding-left:clamp(16px,2vw,24px)">
+        <b style="display:block;font-family:var(--disp);font-weight:400;font-size:clamp(2.4rem,5.2vw,3.8rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:#F6F2E9">{{ nBiz }}</b>
+        <span style="display:block;margin-top:14px;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#C9C3AC">Businesses advised</span>
+      </div>
+      <div style="border-left:1px solid var(--line-deep);padding-left:clamp(16px,2vw,24px)">
+        <b style="display:block;font-family:var(--disp);font-weight:400;font-size:clamp(2.4rem,5.2vw,3.8rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:#F6F2E9">{{ nCases }}</b>
+        <span style="display:block;margin-top:14px;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#C9C3AC">Selected cases</span>
+      </div>
+      <div style="border-left:1px solid var(--line-deep);padding-left:clamp(16px,2vw,24px)">
+        <b style="display:block;font-family:var(--disp);font-weight:400;font-size:clamp(2.4rem,5.2vw,3.8rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:#F6F2E9">{{ nRoi }}</b>
+        <span style="display:block;margin-top:14px;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#C9C3AC">Best marketing return</span>
+      </div>
+      <div style="border-left:1px solid var(--line-deep);padding-left:clamp(16px,2vw,24px)">
+        <b style="display:block;font-family:var(--disp);font-weight:400;font-size:clamp(2.4rem,5.2vw,3.8rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:#F6F2E9">{{ nLangs }}</b>
+        <span style="display:block;margin-top:14px;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#C9C3AC">Working languages</span>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="work" data-reveal="1" style="border-top:1px solid var(--line);background:var(--raised);scroll-margin-top:80px">
+    <div style="max-width:1320px;margin-inline:auto;padding:clamp(48px,8vw,88px) clamp(20px,5vw,64px)">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,44px);padding-bottom:clamp(18px,2.4vw,26px);border-bottom:1px solid var(--line)">
+        <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent)">(01)</span><h2 style="font-family:var(--disp);font-weight:400;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.06;margin:0;letter-spacing:-.01em">Selected work</h2></div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--soft)">{{ fNum }} / {{ fTotal }}</span>
+          <button onClick="{{ slidePrev }}" aria-label="Previous case" style="width:48px;height:48px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);font-family:var(--mono);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .25s ease,background-color .25s ease" style-hover="border-color:var(--accent);background-color:#F6F2E9">&larr;</button>
+          <button onClick="{{ slideNext }}" aria-label="Next case" style="width:48px;height:48px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);font-family:var(--mono);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .25s ease,background-color .25s ease" style-hover="border-color:var(--accent);background-color:#F6F2E9">&rarr;</button>
+        </div>
+      </div>
+      <div ref="{{ slideRef }}" onTouchStart="{{ touchStart }}" onTouchEnd="{{ touchEnd }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,4vw,56px);align-items:center">
+        <div style="position:relative;aspect-ratio:4/5;overflow:hidden;background:#E5DCC8">
+          <img src="{{ fImg }}" alt="{{ fTitle }}" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.04)" />
+          <span aria-hidden="true" style="position:absolute;inset:14px;border:1px solid rgba(246,242,233,.55);pointer-events:none"></span>
+        </div>
+        <div>
+          <p style="margin:0 0 18px;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)">{{ fKicker }}</p>
+          <h3 style="font-family:var(--disp);font-weight:400;font-size:clamp(1.55rem,3.4vw,2.3rem);line-height:1.08;margin:0 0 18px;letter-spacing:-.01em;text-wrap:pretty">{{ fTitle }}</h3>
+          <p style="margin:0;color:var(--soft);max-width:46ch;text-wrap:pretty">{{ fLede }}</p>
+          <div style="display:flex;gap:clamp(20px,4vw,40px);margin-top:28px;flex-wrap:wrap">
+            <sc-for list="{{ fStats }}" as="st" hint-placeholder-count="3">
+              <div style="display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid var(--accent);min-width:90px">
+                <b style="font-family:var(--disp);font-size:1.5rem;font-weight:500;line-height:1">{{ st.v }}</b>
+                <span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)">{{ st.k }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <p style="margin:32px 0 0"><a href="#top" onClick="{{ fGo }}" style="font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#F6F2E9;background:var(--ink);padding:15px 22px;min-height:48px;display:inline-flex;align-items:center;gap:12px;transition:background-color .25s ease" style-hover="background-color:var(--accent-strong);color:#F6F2E9">Read the full case <span aria-hidden="true">&rarr;</span></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="1" style="position:relative;max-width:1320px;margin-inline:auto;padding:clamp(48px,8vw,88px) 0 0 clamp(20px,5vw,64px)">
+    <div aria-hidden="true" style="position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100vw;background-image:url('bring-bg-2.jpg');background-size:cover;background-position:center 40%;opacity:.14;pointer-events:none"></div>
+    <div aria-hidden="true" style="position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100vw;background:linear-gradient(to bottom,rgba(246,242,233,.7),rgba(246,242,233,.15) 60%,rgba(246,242,233,.35));pointer-events:none"></div>
+    <sc-if value="{{ bringWide }}" hint-placeholder-val="{{ true }}">
+    <div style="position:relative;display:grid;grid-template-columns:minmax(190px,230px) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start">
+      <div>
+        <h2 style="margin:0 0 20px;padding-top:clamp(10px,1.4vw,18px);font-family:var(--disp);font-weight:400;font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.1;letter-spacing:-.01em;color:var(--ink)">Working languages</h2>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:12px;align-items:center"><span style="font-family:var(--mono);font-size:.86rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase">English</span><div style="height:6px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--accent);transform-origin:left"></div></div></div>
+          <div style="display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:12px;align-items:center"><span style="font-family:var(--mono);font-size:.86rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase">German</span><div style="height:6px;background:var(--raised)"><div data-grow="1" style="height:100%;width:88%;background:var(--accent);transform-origin:left"></div></div></div>
+          <div style="display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:12px;align-items:center"><span style="font-family:var(--mono);font-size:.86rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Russian</span><div style="height:6px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--accent);transform-origin:left"></div></div></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 clamp(28px,4vw,48px)"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent)">(02)</span><h2 style="margin:0;font-family:var(--disp);font-weight:400;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.06;letter-spacing:-.01em;color:var(--ink)">What I bring to the table</h2></div>
+        <div ref="{{ bRef }}" style="position:relative;aspect-ratio:16/9;width:100%">
+          <img src="va-horse-cutout.png" alt="Veronika Albero with a black horse" style="position:absolute;right:0;bottom:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;display:block;opacity:{{ bOp }};transform:{{ bImgT }};transition:opacity 1s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)"></img>
+          <svg viewBox="0 0 1920 1080" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none"><line x1="572" y1="150" x2="815" y2="150" pathLength="1" stroke-dasharray="1" stroke="#7C4A28" vector-effect="non-scaling-stroke" style="stroke-dashoffset:{{ bDash }};stroke-width:{{ bW0 }};transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1) 0.25s,stroke-width .25s"></line><circle cx="572" cy="150" r="7" stroke="#7C4A28" stroke-width="1.5" style="fill:{{ bFill0 }};opacity:{{ bOp }};transition:opacity .4s 0.25s,fill .25s"></circle><circle cx="815" cy="150" r="14" fill="none" stroke="#7C4A28" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;opacity:{{ bOp }};animation:va-ping 2.4s ease-out 0.0s infinite"></circle><circle cx="815" cy="150" r="{{ bR0 }}" fill="#7C4A28" style="opacity:{{ bOp }};transition:opacity .4s 0.95s,r .25s"></circle><line x1="572" y1="300" x2="770" y2="300" pathLength="1" stroke-dasharray="1" stroke="#7C4A28" vector-effect="non-scaling-stroke" style="stroke-dashoffset:{{ bDash }};stroke-width:{{ bW1 }};transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1) 0.37s,stroke-width .25s"></line><circle cx="572" cy="300" r="7" stroke="#7C4A28" stroke-width="1.5" style="fill:{{ bFill1 }};opacity:{{ bOp }};transition:opacity .4s 0.37s,fill .25s"></circle><circle cx="770" cy="300" r="14" fill="none" stroke="#7C4A28" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;opacity:{{ bOp }};animation:va-ping 2.4s ease-out 0.3s infinite"></circle><circle cx="770" cy="300" r="{{ bR1 }}" fill="#7C4A28" style="opacity:{{ bOp }};transition:opacity .4s 1.07s,r .25s"></circle><line x1="572" y1="450" x2="720" y2="450" pathLength="1" stroke-dasharray="1" stroke="#7C4A28" vector-effect="non-scaling-stroke" style="stroke-dashoffset:{{ bDash }};stroke-width:{{ bW2 }};transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1) 0.49s,stroke-width .25s"></line><circle cx="572" cy="450" r="7" stroke="#7C4A28" stroke-width="1.5" style="fill:{{ bFill2 }};opacity:{{ bOp }};transition:opacity .4s 0.49s,fill .25s"></circle><circle cx="720" cy="450" r="14" fill="none" stroke="#7C4A28" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;opacity:{{ bOp }};animation:va-ping 2.4s ease-out 0.6s infinite"></circle><circle cx="720" cy="450" r="{{ bR2 }}" fill="#7C4A28" style="opacity:{{ bOp }};transition:opacity .4s 1.19s,r .25s"></circle><line x1="572" y1="600" x2="695" y2="600" pathLength="1" stroke-dasharray="1" stroke="#7C4A28" vector-effect="non-scaling-stroke" style="stroke-dashoffset:{{ bDash }};stroke-width:{{ bW3 }};transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1) 0.61s,stroke-width .25s"></line><circle cx="572" cy="600" r="7" stroke="#7C4A28" stroke-width="1.5" style="fill:{{ bFill3 }};opacity:{{ bOp }};transition:opacity .4s 0.61s,fill .25s"></circle><circle cx="695" cy="600" r="14" fill="none" stroke="#7C4A28" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;opacity:{{ bOp }};animation:va-ping 2.4s ease-out 0.9s infinite"></circle><circle cx="695" cy="600" r="{{ bR3 }}" fill="#7C4A28" style="opacity:{{ bOp }};transition:opacity .4s 1.31s,r .25s"></circle><line x1="572" y1="750" x2="740" y2="750" pathLength="1" stroke-dasharray="1" stroke="#7C4A28" vector-effect="non-scaling-stroke" style="stroke-dashoffset:{{ bDash }};stroke-width:{{ bW4 }};transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1) 0.73s,stroke-width .25s"></line><circle cx="572" cy="750" r="7" stroke="#7C4A28" stroke-width="1.5" style="fill:{{ bFill4 }};opacity:{{ bOp }};transition:opacity .4s 0.73s,fill .25s"></circle><circle cx="740" cy="750" r="14" fill="none" stroke="#7C4A28" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;opacity:{{ bOp }};animation:va-ping 2.4s ease-out 1.2s infinite"></circle><circle cx="740" cy="750" r="{{ bR4 }}" fill="#7C4A28" style="opacity:{{ bOp }};transition:opacity .4s 1.43s,r .25s"></circle><line x1="572" y1="900" x2="950" y2="900" pathLength="1" stroke-dasharray="1" stroke="#7C4A28" vector-effect="non-scaling-stroke" style="stroke-dashoffset:{{ bDash }};stroke-width:{{ bW5 }};transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1) 0.85s,stroke-width .25s"></line><circle cx="572" cy="900" r="7" stroke="#7C4A28" stroke-width="1.5" style="fill:{{ bFill5 }};opacity:{{ bOp }};transition:opacity .4s 0.85s,fill .25s"></circle><circle cx="950" cy="900" r="14" fill="none" stroke="#7C4A28" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;opacity:{{ bOp }};animation:va-ping 2.4s ease-out 1.5s infinite"></circle><circle cx="950" cy="900" r="{{ bR5 }}" fill="#7C4A28" style="opacity:{{ bOp }};transition:opacity .4s 1.55s,r .25s"></circle><line x1="1065" y1="80" x2="1065" y2="150" pathLength="1" stroke-dasharray="1" stroke="#7C4A28" vector-effect="non-scaling-stroke" style="stroke-dashoffset:{{ bDash }};stroke-width:{{ bW6 }};transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1) 0.97s,stroke-width .25s"></line><circle cx="1065" cy="80" r="7" stroke="#7C4A28" stroke-width="1.5" style="fill:{{ bFill6 }};opacity:{{ bOp }};transition:opacity .4s 0.97s,fill .25s"></circle><circle cx="1065" cy="150" r="14" fill="none" stroke="#7C4A28" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;opacity:{{ bOp }};animation:va-ping 2.4s ease-out 1.8s infinite"></circle><circle cx="1065" cy="150" r="{{ bR6 }}" fill="#7C4A28" style="opacity:{{ bOp }};transition:opacity .4s 1.67s,r .25s"></circle><line x1="1700" y1="80" x2="1700" y2="245" pathLength="1" stroke-dasharray="1" stroke="#7C4A28" vector-effect="non-scaling-stroke" style="stroke-dashoffset:{{ bDash }};stroke-width:{{ bW7 }};transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1) 1.09s,stroke-width .25s"></line><circle cx="1700" cy="80" r="7" stroke="#7C4A28" stroke-width="1.5" style="fill:{{ bFill7 }};opacity:{{ bOp }};transition:opacity .4s 1.09s,fill .25s"></circle><circle cx="1700" cy="245" r="14" fill="none" stroke="#7C4A28" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;opacity:{{ bOp }};animation:va-ping 2.4s ease-out 2.1s infinite"></circle><circle cx="1700" cy="245" r="{{ bR7 }}" fill="#7C4A28" style="opacity:{{ bOp }};transition:opacity .4s 1.79s,r .25s"></circle></svg>
+          <div onMouseEnter="{{ bIn0 }}" onMouseLeave="{{ bOut }}" style="position:absolute;left:0;width:28%;top:13.89%;transform:translateY(-50%);text-align:right;align-items:flex-end;display:flex;flex-direction:column;cursor:default;z-index:{{ bZ0 }};opacity:{{ bOp }};transition:opacity .5s ease 0.25s">
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(.98rem,1.5vw,1.18rem);font-weight:600;letter-spacing:-.005em;line-height:1.2;white-space:nowrap;padding:8px 14px 8px 16px;border-radius:999px;border:1px solid {{ bBd0 }};box-shadow:{{ bSh0 }};color:{{ bC0 }};background:{{ bBg0 }};backdrop-filter:blur(6px);transition:color .3s,background .3s,border-color .3s,box-shadow .4s">Strategic thinking<span aria-hidden="true" style="width:20px;height:20px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;font-weight:400;line-height:1;opacity:.75;transform:{{ bRot0 }};transition:transform .3s">+</span></span>
+            <sc-if value="{{ bOn0 }}" hint-placeholder-val="{{ false }}"><span style="display:block;position:absolute;top:calc(100% + 6px);right:0;width:230px;padding:10px 12px;background:rgba(246,242,233,.96);border:1px solid var(--line);font-size:.9rem;line-height:1.45;color:var(--ink);text-align:left;text-wrap:pretty;box-shadow:0 10px 30px rgba(34,31,25,.12)">Positioning, long-term brand direction and priorities tied to business goals.</span></sc-if>
+          </div><div onMouseEnter="{{ bIn1 }}" onMouseLeave="{{ bOut }}" style="position:absolute;left:0;width:28%;top:27.78%;transform:translateY(-50%);text-align:right;align-items:flex-end;display:flex;flex-direction:column;cursor:default;z-index:{{ bZ1 }};opacity:{{ bOp }};transition:opacity .5s ease 0.37s">
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(.98rem,1.5vw,1.18rem);font-weight:600;letter-spacing:-.005em;line-height:1.2;white-space:nowrap;padding:8px 14px 8px 16px;border-radius:999px;border:1px solid {{ bBd1 }};box-shadow:{{ bSh1 }};color:{{ bC1 }};background:{{ bBg1 }};backdrop-filter:blur(6px);transition:color .3s,background .3s,border-color .3s,box-shadow .4s">Business development<span aria-hidden="true" style="width:20px;height:20px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;font-weight:400;line-height:1;opacity:.75;transform:{{ bRot1 }};transition:transform .3s">+</span></span>
+            <sc-if value="{{ bOn1 }}" hint-placeholder-val="{{ false }}"><span style="display:block;position:absolute;top:calc(100% + 6px);right:0;width:230px;padding:10px 12px;background:rgba(246,242,233,.96);border:1px solid var(--line);font-size:.9rem;line-height:1.45;color:var(--ink);text-align:left;text-wrap:pretty;box-shadow:0 10px 30px rgba(34,31,25,.12)">Partnerships, sponsorships and barter deals; new markets and revenue streams.</span></sc-if>
+          </div><div onMouseEnter="{{ bIn2 }}" onMouseLeave="{{ bOut }}" style="position:absolute;left:0;width:28%;top:41.67%;transform:translateY(-50%);text-align:right;align-items:flex-end;display:flex;flex-direction:column;cursor:default;z-index:{{ bZ2 }};opacity:{{ bOp }};transition:opacity .5s ease 0.49s">
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(.98rem,1.5vw,1.18rem);font-weight:600;letter-spacing:-.005em;line-height:1.2;white-space:nowrap;padding:8px 14px 8px 16px;border-radius:999px;border:1px solid {{ bBd2 }};box-shadow:{{ bSh2 }};color:{{ bC2 }};background:{{ bBg2 }};backdrop-filter:blur(6px);transition:color .3s,background .3s,border-color .3s,box-shadow .4s">Product development<span aria-hidden="true" style="width:20px;height:20px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;font-weight:400;line-height:1;opacity:.75;transform:{{ bRot2 }};transition:transform .3s">+</span></span>
+            <sc-if value="{{ bOn2 }}" hint-placeholder-val="{{ false }}"><span style="display:block;position:absolute;top:calc(100% + 6px);right:0;width:230px;padding:10px 12px;background:rgba(246,242,233,.96);border:1px solid var(--line);font-size:.9rem;line-height:1.45;color:var(--ink);text-align:left;text-wrap:pretty;box-shadow:0 10px 30px rgba(34,31,25,.12)">From concept to launch: collections, services and offers built around the audience.</span></sc-if>
+          </div><div onMouseEnter="{{ bIn3 }}" onMouseLeave="{{ bOut }}" style="position:absolute;left:0;width:28%;top:55.56%;transform:translateY(-50%);text-align:right;align-items:flex-end;display:flex;flex-direction:column;cursor:default;z-index:{{ bZ3 }};opacity:{{ bOp }};transition:opacity .5s ease 0.61s">
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(.98rem,1.5vw,1.18rem);font-weight:600;letter-spacing:-.005em;line-height:1.2;white-space:nowrap;padding:8px 14px 8px 16px;border-radius:999px;border:1px solid {{ bBd3 }};box-shadow:{{ bSh3 }};color:{{ bC3 }};background:{{ bBg3 }};backdrop-filter:blur(6px);transition:color .3s,background .3s,border-color .3s,box-shadow .4s">Go-to-market<span aria-hidden="true" style="width:20px;height:20px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;font-weight:400;line-height:1;opacity:.75;transform:{{ bRot3 }};transition:transform .3s">+</span></span>
+            <sc-if value="{{ bOn3 }}" hint-placeholder-val="{{ false }}"><span style="display:block;position:absolute;top:calc(100% + 6px);right:0;width:230px;padding:10px 12px;background:rgba(246,242,233,.96);border:1px solid var(--line);font-size:.9rem;line-height:1.45;color:var(--ink);text-align:left;text-wrap:pretty;box-shadow:0 10px 30px rgba(34,31,25,.12)">Launch plans, channel mix, pricing and messaging for new products and events.</span></sc-if>
+          </div><div onMouseEnter="{{ bIn4 }}" onMouseLeave="{{ bOut }}" style="position:absolute;left:0;width:28%;top:69.44%;transform:translateY(-50%);text-align:right;align-items:flex-end;display:flex;flex-direction:column;cursor:default;z-index:{{ bZ4 }};opacity:{{ bOp }};transition:opacity .5s ease 0.73s">
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(.98rem,1.5vw,1.18rem);font-weight:600;letter-spacing:-.005em;line-height:1.2;white-space:nowrap;padding:8px 14px 8px 16px;border-radius:999px;border:1px solid {{ bBd4 }};box-shadow:{{ bSh4 }};color:{{ bC4 }};background:{{ bBg4 }};backdrop-filter:blur(6px);transition:color .3s,background .3s,border-color .3s,box-shadow .4s">Marketing strategy<span aria-hidden="true" style="width:20px;height:20px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;font-weight:400;line-height:1;opacity:.75;transform:{{ bRot4 }};transition:transform .3s">+</span></span>
+            <sc-if value="{{ bOn4 }}" hint-placeholder-val="{{ false }}"><span style="display:block;position:absolute;top:calc(100% + 6px);right:0;width:230px;padding:10px 12px;background:rgba(246,242,233,.96);border:1px solid var(--line);font-size:.9rem;line-height:1.45;color:var(--ink);text-align:left;text-wrap:pretty;box-shadow:0 10px 30px rgba(34,31,25,.12)">Brand platform, content and campaign planning, budgets and KPIs.</span></sc-if>
+          </div><div onMouseEnter="{{ bIn5 }}" onMouseLeave="{{ bOut }}" style="position:absolute;left:0;width:28%;top:83.33%;transform:translateY(-50%);text-align:right;align-items:flex-end;display:flex;flex-direction:column;cursor:default;z-index:{{ bZ5 }};opacity:{{ bOp }};transition:opacity .5s ease 0.85s">
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(.98rem,1.5vw,1.18rem);font-weight:600;letter-spacing:-.005em;line-height:1.2;white-space:nowrap;padding:8px 14px 8px 16px;border-radius:999px;border:1px solid {{ bBd5 }};box-shadow:{{ bSh5 }};color:{{ bC5 }};background:{{ bBg5 }};backdrop-filter:blur(6px);transition:color .3s,background .3s,border-color .3s,box-shadow .4s">Project leadership<span aria-hidden="true" style="width:20px;height:20px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;font-weight:400;line-height:1;opacity:.75;transform:{{ bRot5 }};transition:transform .3s">+</span></span>
+            <sc-if value="{{ bOn5 }}" hint-placeholder-val="{{ false }}"><span style="display:block;position:absolute;top:calc(100% + 6px);right:0;width:230px;padding:10px 12px;background:rgba(246,242,233,.96);border:1px solid var(--line);font-size:.9rem;line-height:1.45;color:var(--ink);text-align:left;text-wrap:pretty;box-shadow:0 10px 30px rgba(34,31,25,.12)">Timelines, budgets and coordination of teams, contractors and venues.</span></sc-if>
+          </div><div onMouseEnter="{{ bIn6 }}" onMouseLeave="{{ bOut }}" style="position:absolute;left:55.47%;top:3%;width:max-content;transform:translate(calc(-100% + 22px),-50%);text-align:right;align-items:flex-end;display:flex;flex-direction:column;cursor:default;z-index:{{ bZ6 }};opacity:{{ bOp }};transition:opacity .5s ease 0.97s">
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(.98rem,1.5vw,1.18rem);font-weight:600;letter-spacing:-.005em;line-height:1.2;white-space:nowrap;padding:8px 14px 8px 16px;border-radius:999px;border:1px solid {{ bBd6 }};box-shadow:{{ bSh6 }};color:{{ bC6 }};background:{{ bBg6 }};backdrop-filter:blur(6px);transition:color .3s,background .3s,border-color .3s,box-shadow .4s">Market research<span aria-hidden="true" style="width:20px;height:20px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;font-weight:400;line-height:1;opacity:.75;transform:{{ bRot6 }};transition:transform .3s">+</span></span>
+            <sc-if value="{{ bOn6 }}" hint-placeholder-val="{{ false }}"><span style="display:block;position:absolute;top:calc(100% + 6px);right:0;width:230px;padding:10px 12px;background:rgba(246,242,233,.96);border:1px solid var(--line);font-size:.9rem;line-height:1.45;color:var(--ink);text-align:left;text-wrap:pretty;box-shadow:0 10px 30px rgba(34,31,25,.12)">Audience and competitor analysis, trends and insights that shape decisions.</span></sc-if>
+          </div><div onMouseEnter="{{ bIn7 }}" onMouseLeave="{{ bOut }}" style="position:absolute;left:88.54%;top:3%;width:max-content;transform:translate(calc(-100% + 22px),-50%);text-align:right;align-items:flex-end;display:flex;flex-direction:column;cursor:default;z-index:{{ bZ7 }};opacity:{{ bOp }};transition:opacity .5s ease 1.09s">
+            <span style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(.98rem,1.5vw,1.18rem);font-weight:600;letter-spacing:-.005em;line-height:1.2;white-space:nowrap;padding:8px 14px 8px 16px;border-radius:999px;border:1px solid {{ bBd7 }};box-shadow:{{ bSh7 }};color:{{ bC7 }};background:{{ bBg7 }};backdrop-filter:blur(6px);transition:color .3s,background .3s,border-color .3s,box-shadow .4s">Team leadership<span aria-hidden="true" style="width:20px;height:20px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;font-weight:400;line-height:1;opacity:.75;transform:{{ bRot7 }};transition:transform .3s">+</span></span>
+            <sc-if value="{{ bOn7 }}" hint-placeholder-val="{{ false }}"><span style="display:block;position:absolute;top:calc(100% + 6px);right:0;width:230px;padding:10px 12px;background:rgba(246,242,233,.96);border:1px solid var(--line);font-size:.9rem;line-height:1.45;color:var(--ink);text-align:left;text-wrap:pretty;box-shadow:0 10px 30px rgba(34,31,25,.12)">Building and guiding in-house teams, freelancers and partners.</span></sc-if>
+          </div>
+        </div>
+      </div>
+    </div>
+    </sc-if>
+    <sc-if value="{{ bringNarrow }}" hint-placeholder-val="{{ false }}">
+    <div style="position:relative;display:flex;flex-direction:column;gap:36px;padding-right:clamp(20px,5vw,64px)">
+      <div>
+        <h2 style="margin:0 0 20px;padding-top:clamp(10px,1.4vw,18px);font-family:var(--disp);font-weight:400;font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.1;letter-spacing:-.01em;color:var(--ink)">Working languages</h2>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:12px;align-items:center"><span style="font-family:var(--mono);font-size:.86rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase">English</span><div style="height:6px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--accent);transform-origin:left"></div></div></div>
+          <div style="display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:12px;align-items:center"><span style="font-family:var(--mono);font-size:.86rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase">German</span><div style="height:6px;background:var(--raised)"><div data-grow="1" style="height:100%;width:88%;background:var(--accent);transform-origin:left"></div></div></div>
+          <div style="display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:12px;align-items:center"><span style="font-family:var(--mono);font-size:.86rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase">Russian</span><div style="height:6px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--accent);transform-origin:left"></div></div></div>
+        </div>
+      </div>
+      <div>
+        <h2 style="margin:0 0 16px;font-family:var(--disp);font-weight:400;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.06;letter-spacing:-.01em;color:var(--ink)">What I bring to the table</h2>
+        <div style="columns:2;column-gap:24px">
+          <div style="padding-block:9px;border-bottom:1px solid var(--line);break-inside:avoid;font-size:1.05rem;font-weight:600">Strategic thinking</div>
+          <div style="padding-block:9px;border-bottom:1px solid var(--line);break-inside:avoid;font-size:1.05rem;font-weight:600">Business development</div>
+          <div style="padding-block:9px;border-bottom:1px solid var(--line);break-inside:avoid;font-size:1.05rem;font-weight:600">Product development</div>
+          <div style="padding-block:9px;border-bottom:1px solid var(--line);break-inside:avoid;font-size:1.05rem;font-weight:600">Go-to-market</div>
+          <div style="padding-block:9px;border-bottom:1px solid var(--line);break-inside:avoid;font-size:1.05rem;font-weight:600">Marketing strategy</div>
+          <div style="padding-block:9px;border-bottom:1px solid var(--line);break-inside:avoid;font-size:1.05rem;font-weight:600">Project leadership</div>
+          <div style="padding-block:9px;border-bottom:1px solid var(--line);break-inside:avoid;font-size:1.05rem;font-weight:600">Market research</div>
+          <div style="padding-block:9px;border-bottom:1px solid var(--line);break-inside:avoid;font-size:1.05rem;font-weight:600">Team leadership</div>
+        </div>
+      </div>
+    </div>
+    <img src="va-horse-cutout.png" alt="Veronika Albero with a black horse" style="position:relative;display:block;width:100%;height:auto;margin-top:12px"></img>
+    </sc-if>
+  </section>
+</div>
+</sc-if>
+
+<sc-if value="{{ isCases }}" hint-placeholder-val="{{ false }}">
+<div>
+  <header style="max-width:1320px;margin-inline:auto;padding:clamp(36px,6vw,64px) clamp(20px,5vw,64px) 0">
+    <p style="margin:0 0 18px;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)">Cases &middot; 01&ndash;08</p>
+    <h1 style="font-family:'Noto Serif Display',serif;font-weight:500;font-size:clamp(2rem,5.4vw,3.6rem);line-height:1.05;margin:0;max-width:20ch;letter-spacing:-.015em">Eight projects, in full</h1>
+    <p style="margin:22px 0 0;max-width:38em;font-family:var(--disp);font-size:clamp(1.02rem,2vw,1.22rem);color:var(--soft);text-wrap:pretty">Marketing strategy, brand building, content and live production - mostly at the intersection of business and the equestrian world. Open any case for the full story and the numbers.</p>
+  </header>
+
+  <section data-reveal="1" style="max-width:1320px;margin-inline:auto;padding:clamp(32px,5vw,56px) clamp(20px,5vw,64px) clamp(48px,8vw,88px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:clamp(18px,3vw,32px)">
+      <sc-for list="{{ cIndex }}" as="c" hint-placeholder-count="8">
+        <a href="#top" onClick="{{ c.go }}" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;border:1px solid var(--line);background:#fff;transition:border-color .3s ease,transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease" style-hover="border-color:var(--accent);transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(34,31,25,.55)">
+          <div style="position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--raised)">
+            <sc-if value="{{ c.hasCover }}" hint-placeholder-val="{{ false }}"><img src="{{ c.coverSrc }}" alt="{{ c.title }}" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)" /></sc-if>
+            <sc-if value="{{ c.noCover }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ c.cover }}" shape="rect" placeholder="Обложка кейса"></image-slot></sc-if>
+          </div>
+          <div style="padding:20px;display:flex;flex-direction:column;gap:12px;flex:1">
+            <div style="display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">
+              <span>{{ c.num }}</span><span>{{ c.field }}</span>
+            </div>
+            <h2 style="font-family:var(--disp);font-weight:400;font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.14;margin:0;letter-spacing:-.01em">{{ c.title }}</h2>
+            <p style="margin:0;color:var(--soft);font-size:.9rem;text-wrap:pretty">{{ c.summary }}</p>
+            <div style="margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+              <span style="display:flex;flex-direction:column;gap:3px;min-width:0"><b style="font-family:var(--disp);font-size:1.35rem;font-weight:500;color:var(--accent-strong);line-height:1">{{ c.statV }}</b><span style="font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)">{{ c.statK }}</span></span>
+              <span style="font-family:var(--mono);font-size:.72rem;color:var(--accent)">&rarr;</span>
+            </div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<sc-if value="{{ isCase }}" hint-placeholder-val="{{ false }}">
+<div>
+  <header style="max-width:1320px;margin-inline:auto;padding:clamp(24px,4vw,40px) clamp(20px,5vw,64px) 0">
+    <a href="#top" onClick="{{ goCases }}" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-bottom:clamp(12px,2vw,20px);font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink)" style-hover="color:var(--accent)"><span aria-hidden="true" style="width:32px;height:32px;border:1px solid var(--line);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--accent)">&larr;</span>Back to all cases</a>
+    <p style="margin:0 0 18px;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)">{{ cKicker }}</p>
+    <h1 style="font-family:'Noto Serif Display',serif;font-weight:500;font-size:clamp(2rem,5.4vw,3.6rem);line-height:1.05;margin:0;max-width:22ch;letter-spacing:-.015em">{{ cTitle }}</h1>
+    <p style="margin:clamp(14px,2vh,22px) 0 0;max-width:38em;font-family:var(--disp);font-size:clamp(1.02rem,2vw,1.22rem);color:var(--soft);text-wrap:pretty">{{ cLede }}</p>
+    <div style="display:flex;gap:clamp(20px,3vw,48px);align-items:flex-start;margin-top:clamp(18px,3vh,30px);padding-top:clamp(14px,2vh,22px);border-top:1px solid var(--line);flex-wrap:wrap;flex-direction:{{ cHeadDir }}">
+    <div style="display:flex;gap:32px;flex-wrap:wrap;min-width:min(100%,240px);flex:{{ cMetaFlex }};flex-direction:{{ cMetaDir }}">
+      <sc-for list="{{ cMeta }}" as="m" hint-placeholder-count="4">
+        <div><span style="display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">{{ m.k }}</span><b style="font-weight:600;font-size:.95rem">{{ m.v }}</b></div>
+      </sc-for>
+    </div>
+    <div ref="{{ coverRef }}" style="position:relative;overflow:hidden;background:{{ cCoverBg }};width:100%;aspect-ratio:{{ cCoverBoxRatio }};max-width:{{ cCoverMaxW }};margin-top:{{ cCoverTop }};flex:{{ cCoverFlex }}">
+      <sc-if value="{{ cHasCover }}" hint-placeholder-val="{{ false }}">
+        <img src="{{ cCoverSrc }}" alt="{{ cTitle }}" style="display:block;width:100%;height:auto;max-height:max(420px,88svh);object-fit:cover;object-position:{{ cCoverPos }}" />
+      </sc-if>
+      <sc-if value="{{ cNoCover }}" hint-placeholder-val="{{ true }}">
+        <image-slot id="{{ cCover }}" shape="rect" placeholder="Обложка кейса"></image-slot>
+      </sc-if>
+    </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ cIsAvatar }}" hint-placeholder-val="{{ false }}">
+  <section data-reveal="1" style="max-width:1320px;margin-inline:auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,64px) 0">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,32px)">
+      <h2 style="font-family:var(--disp);font-weight:400;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.06;margin:0;letter-spacing:-.01em">Brand book</h2>
+      <p style="margin:0;max-width:36ch;color:var(--soft);font-size:.95rem;text-wrap:pretty">Logo, wordmark and its rules, applied to merchandise and social media.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:1px;background:var(--line);border:1px solid var(--line)">
+        <figure style="margin:0;display:flex;flex-direction:column;background:#4E0B22">
+          <div style="aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,24px);overflow:hidden"><img src="avatar-wordmark.png" alt="Avatar brand book - Wordmark" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.04)"></img></div>
+          <figcaption style="padding:12px 16px;border-top:1px solid var(--line);background:#fff;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Wordmark</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;background:#FEFCEB">
+          <div style="aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,24px);overflow:hidden"><img src="avatar-construction.png" alt="Avatar brand book - Logo construction" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.04)"></img></div>
+          <figcaption style="padding:12px 16px;border-top:1px solid var(--line);background:#fff;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Logo construction</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;background:#FEFCEB">
+          <div style="aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,24px);overflow:hidden"><img src="avatar-safezone.png" alt="Avatar brand book - Clear space" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.04)"></img></div>
+          <figcaption style="padding:12px 16px;border-top:1px solid var(--line);background:#fff;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Clear space</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;background:#FEFCEB">
+          <div style="aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,24px);overflow:hidden"><img src="avatar-totes.png" alt="Avatar brand book - Tote bags" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.04)"></img></div>
+          <figcaption style="padding:12px 16px;border-top:1px solid var(--line);background:#fff;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Tote bags</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;background:#FEFCEB">
+          <div style="aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,24px);overflow:hidden"><img src="avatar-apparel.png" alt="Avatar brand book - Apparel" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.04)"></img></div>
+          <figcaption style="padding:12px 16px;border-top:1px solid var(--line);background:#fff;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Apparel</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;background:#FEFCEB">
+          <div style="aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,24px);overflow:hidden"><img src="avatar-social.png" alt="Avatar brand book - Social media" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.04)"></img></div>
+          <figcaption style="padding:12px 16px;border-top:1px solid var(--line);background:#fff;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Social media</figcaption>
+        </figure>
+    </div>
+  </section>
+  </sc-if>
+
+  <section data-reveal="1" style="max-width:1320px;margin-inline:auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,64px)">
+    <h2 style="font-family:var(--disp);font-weight:400;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 clamp(20px,3vw,30px);letter-spacing:-.01em">The numbers</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">
+      <sc-for list="{{ cStats }}" as="s" hint-placeholder-count="4">
+        <div style="background:var(--bg);padding:24px"><b style="display:block;font-family:var(--disp);font-size:clamp(1.9rem,4vw,2.8rem);font-weight:500;line-height:1;font-variant-numeric:tabular-nums">{{ s.v }}</b><span style="display:block;margin-top:8px;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)">{{ s.k }}</span></div>
+      </sc-for>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,4vw,48px);margin-top:clamp(32px,5vw,52px);align-items:start">
+      <div style="border:1px solid var(--line);background:#fff;padding:clamp(20px,3vw,28px)">
+        <p style="margin:0 0 20px;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">{{ cBarsTitle }}</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <sc-for list="{{ cBars }}" as="b" hint-placeholder-count="3">
+            <div>
+              <div style="display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:.7rem;color:var(--soft);margin-bottom:7px"><span style="min-width:0">{{ b.k }}</span><span style="white-space:nowrap;flex:none">{{ b.v }}</span></div>
+              <div style="height:13px;background:var(--raised)"><div data-grow="1" style="height:100%;width:{{ b.w }};background:{{ b.c }};transform-origin:left"></div></div>
+            </div>
+          </sc-for>
+        </div>
+        <p style="margin:20px 0 0;color:var(--soft);font-size:.92rem;text-wrap:pretty">{{ cBarsNote }}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:clamp(20px,3vw,28px)">
+        <sc-for list="{{ cStory }}" as="b" hint-placeholder-count="3">
+          <div style="border-top:1px solid var(--line);padding-top:16px">
+            <p style="margin:0 0 10px;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">{{ b.h }}</p>
+            <p style="margin:0;color:var(--soft);max-width:54ch;text-wrap:pretty">{{ b.t }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="1" style="background:var(--deep);color:#F1ECDD">
+    <div style="max-width:1320px;margin-inline:auto;padding:clamp(44px,7vw,80px) clamp(20px,5vw,64px)">
+      <p style="margin:0;font-family:var(--disp);font-style:italic;font-size:clamp(1.3rem,3vw,2rem);line-height:1.28;max-width:28ch;color:#EAB483">{{ cQuote }}</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(28px,4vw,40px)">
+        <sc-for list="{{ cRoles }}" as="r" hint-placeholder-count="4">
+          <span style="font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#B9B49F;border:1px solid var(--line-deep);border-radius:999px;padding:8px 14px">{{ r }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="1" style="max-width:1320px;margin-inline:auto;padding:clamp(28px,4vw,44px) clamp(20px,5vw,64px) clamp(40px,6vw,72px)">
+    <sc-if value="{{ cHasGallery }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,{{ cGalleryMin }}),1fr));gap:10px;margin:clamp(12px,2vw,28px) 0 clamp(32px,5vw,52px)">
+      <sc-for list="{{ cGallery }}" as="g" hint-placeholder-count="3">
+        <div style="position:relative;overflow:hidden;background:var(--raised);aspect-ratio:{{ cGalleryRatio }}">
+          <sc-if value="{{ g.hasSrc }}" hint-placeholder-val="{{ false }}"><img src="{{ g.src }}" alt="Кадр из проекта" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.04)" /></sc-if>
+          <sc-if value="{{ g.noSrc }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ g.id }}" shape="rect" placeholder="Кадр из проекта"></image-slot></sc-if>
+        </div>
+      </sc-for>
+    </div>
+    </sc-if>
+    <div style="padding-top:clamp(24px,4vw,36px);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center">
+      <a href="#top" onClick="{{ cPrev }}" style="font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--soft);max-width:26ch">&larr; {{ cPrevTitle }}</a>
+      <a href="#top" onClick="{{ goCases }}" style="font-family:var(--mono);font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--accent);padding-bottom:4px;white-space:nowrap">All cases</a>
+      <a href="#top" onClick="{{ cNext }}" style="font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--soft);max-width:26ch;text-align:right">{{ cNextTitle }} &rarr;</a>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+<div>
+  <header style="max-width:1320px;margin-inline:auto;padding:clamp(36px,6vw,64px) clamp(20px,5vw,64px) 0">
+    <p style="margin:0 0 18px;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)">Experience</p>
+    <h1 style="font-family:'Noto Serif Display',serif;font-weight:500;font-size:clamp(2rem,5.4vw,3.6rem);line-height:1.05;margin:0;max-width:20ch;letter-spacing:-.015em">Experiences that shaped me</h1>
+    <p style="margin:22px 0 0;max-width:38em;font-family:var(--disp);font-size:clamp(1.02rem,2vw,1.22rem);color:var(--soft);text-wrap:pretty">Education across the United States, Russia, the Czech Republic and Germany, practical experience from PwC to Los Angeles, and the projects I have built since.</p>
+    <figure style="margin:clamp(22px,3.5vh,40px) 0 0;position:relative;width:100%;overflow:hidden;background:var(--deep)">
+      <img src="oth-graduation.jpg" alt="Graduation ceremony at OTH Amberg-Weiden" style="display:block;width:100%;height:auto;max-height:max(420px,82svh);object-fit:cover;object-position:center 60%"></img>
+      <figcaption style="position:absolute;left:clamp(14px,2vw,24px);bottom:clamp(12px,1.8vw,20px);font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:#F6F2E9;background:rgba(34,31,25,.6);padding:6px 10px">Graduation &middot; OTH Amberg-Weiden</figcaption>
+    </figure>
+  </header>
+
+  <div style="margin-top:clamp(32px,5vw,52px);border-block:1px solid var(--line);background:var(--bg);overflow:hidden;padding-block:clamp(16px,2vw,22px)">
+    <div style="display:flex;width:max-content;animation:va-marq 40s linear infinite">
+      <div style="display:flex;gap:clamp(22px,3vw,40px);padding-right:clamp(22px,3vw,40px);font-family:var(--disp);font-style:italic;font-size:clamp(1.05rem,1.8vw,1.35rem);color:var(--ink);align-items:center;white-space:nowrap">
+        <span>Dartmouth College</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>University of Vermont</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Skolkovo</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>PwC</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>NRU HSE</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>&#352;KODA Auto University</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>OTH Amberg-Weiden</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>APEC SME Forum</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span>
+      </div>
+      <div aria-hidden="true" style="display:flex;gap:clamp(22px,3vw,40px);padding-right:clamp(22px,3vw,40px);font-family:var(--disp);font-style:italic;font-size:clamp(1.05rem,1.8vw,1.35rem);color:var(--ink);align-items:center;white-space:nowrap">
+        <span>Dartmouth College</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>University of Vermont</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>Skolkovo</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>PwC</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>NRU HSE</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>&#352;KODA Auto University</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>OTH Amberg-Weiden</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span><span>APEC SME Forum</span><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none"></span>
+      </div>
+    </div>
+  </div>
+
+  <section data-reveal="1" style="max-width:1320px;margin-inline:auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,64px) clamp(24px,4vw,40px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(10px,2vw,18px)">
+      <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent)">(01)</span><h2 style="font-family:var(--disp);font-weight:400;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.06;margin:0;letter-spacing:-.01em">Education</h2></div>
+      
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:34px clamp(1.6rem,5vw,4rem) minmax(0,1fr);gap:clamp(10px,3vw,28px);padding-block:clamp(26px,4vw,38px);border-top:1px solid var(--line)">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#EFE8D9"></circle><path d="M17 1 A16 16 0 0 1 17 33 Z" fill="#7C4A28"></path></svg>
+        <span style="font-family:var(--mono);font-size:.85rem;color:var(--putty);padding-top:6px">01</span>
+        <div>
+          <h3 style="font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.55rem);margin:0 0 10px">Early foundations - RYEP, Dartmouth, Vermont</h3>
+          <p style="margin:0;color:var(--soft);max-width:38em">Even before university, I was selected for the Russian Youth Environmental Program in the USA. At Dartmouth College, I explored environmental and social challenges in an international academic environment.</p><p style="margin:12px 0 0;color:var(--soft);max-width:38em">At the University of Vermont, I studied project management, communication, the UN Sustainable Development Goals, and how to build sustainable businesses that create positive change - combining theory with practical projects and field experience.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:34px clamp(1.6rem,5vw,4rem) minmax(0,1fr);gap:clamp(10px,3vw,28px);padding-block:clamp(26px,4vw,38px);border-top:1px solid var(--line)">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#EFE8D9"></circle><path d="M9 24 L17 8 L25 24 Z" fill="#7C4A28"></path></svg>
+        <span style="font-family:var(--mono);font-size:.85rem;color:var(--putty);padding-top:6px">02</span>
+        <div>
+          <h3 style="font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.55rem);margin:0 0 10px">Skolkovo &amp; Innovation 4 Change</h3>
+          <p style="margin:0;color:var(--soft);max-width:38em">I joined Skolkovo&rsquo;s &ldquo;Technology of Business&rdquo; programme and Innovation 4 Change in Berlin to strengthen Kapoosta&rsquo;s business model, develop the project further and learn from experienced mentors.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:34px clamp(1.6rem,5vw,4rem) minmax(0,1fr);gap:clamp(10px,3vw,28px);padding-block:clamp(26px,4vw,38px);border-top:1px solid var(--line)">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#EFE8D9"></circle><rect x="8" y="8" width="18" height="18" fill="#7C4A28"></rect><circle cx="17" cy="17" r="4.5" fill="#EFE8D9"></circle></svg>
+        <span style="font-family:var(--mono);font-size:.85rem;color:var(--putty);padding-top:6px">03</span>
+        <div>
+          <h3 style="font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.55rem);margin:0 0 10px">Bachelor&rsquo;s in Management - NRU HSE</h3>
+          <p style="margin:0;color:var(--soft);max-width:38em">With a strong foundation in business and management, I pursued a Bachelor&rsquo;s in Management at NRU HSE.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:34px clamp(1.6rem,5vw,4rem) minmax(0,1fr);gap:clamp(10px,3vw,28px);padding-block:clamp(26px,4vw,38px);border-top:1px solid var(--line)">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#EFE8D9"></circle><path d="M17 5 L29 17 L17 29 L5 17 Z" fill="#7C4A28"></path></svg>
+        <span style="font-family:var(--mono);font-size:.85rem;color:var(--putty);padding-top:6px">04</span>
+        <div>
+          <h3 style="font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.55rem);margin:0 0 10px">A thesis with highest distinction</h3>
+          <p style="margin:0;color:var(--soft);max-width:38em">My thesis, awarded the highest distinction, focused on product management and developing a go-to-market strategy for a startup.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:34px clamp(1.6rem,5vw,4rem) minmax(0,1fr);gap:clamp(10px,3vw,28px);padding-block:clamp(26px,4vw,38px);border-top:1px solid var(--line)">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#EFE8D9"></circle><rect x="5" y="15.2" width="24" height="3.6" fill="#7C4A28"></rect><rect x="15.2" y="5" width="3.6" height="24" fill="#7C4A28"></rect></svg>
+        <span style="font-family:var(--mono);font-size:.85rem;color:var(--putty);padding-top:6px">05</span>
+        <div>
+          <h3 style="font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.55rem);margin:0 0 10px">Exchange semester - &#352;KODA Auto University</h3>
+          <p style="margin:0;color:var(--soft);max-width:38em">I complemented this with an exchange semester at &#352;KODA Auto University in the Czech Republic, studying international business and marketing through real European market projects.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:34px clamp(1.6rem,5vw,4rem) minmax(0,1fr);gap:clamp(10px,3vw,28px);padding-block:clamp(26px,4vw,38px);border-block:1px solid var(--line)">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#EFE8D9"></circle><rect x="7" y="19" width="6" height="8" fill="#B7A47F"></rect><rect x="14" y="13" width="6" height="14" fill="#7C4A28"></rect><rect x="21" y="7" width="6" height="20" fill="#5E3720"></rect></svg>
+        <span style="font-family:var(--mono);font-size:.85rem;color:var(--putty);padding-top:6px">06</span>
+        <div>
+          <h3 style="font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.55rem);margin:0 0 10px">International Business at OTH Amberg-Weiden</h3>
+          <p style="margin:0;color:var(--soft);max-width:38em">I completed a Bachelor&rsquo;s in International Business at OTH Amberg-Weiden in Germany, focusing on strategic management, marketing analytics and digital business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="1" style="max-width:1320px;margin-inline:auto;padding:clamp(24px,4vw,40px) clamp(20px,5vw,64px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(10px,2vw,18px)">
+      <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent)">(02)</span><h2 style="font-family:var(--disp);font-weight:400;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.06;margin:0;letter-spacing:-.01em">Practical experience</h2></div>
+      
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:34px clamp(1.6rem,5vw,4rem) minmax(0,1fr);gap:clamp(10px,3vw,28px);padding-block:clamp(26px,4vw,38px);border-top:1px solid var(--line)">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#EFE8D9"></circle><rect x="5" y="15.2" width="24" height="3.6" fill="#7C4A28"></rect><rect x="15.2" y="5" width="3.6" height="24" fill="#7C4A28"></rect></svg>
+        <span style="font-family:var(--mono);font-size:.85rem;color:var(--putty);padding-top:6px">01</span>
+        <div>
+          <h3 style="font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.55rem);margin:0 0 10px">PwC - St. Petersburg International Economic Forum</h3>
+          <p style="margin:0;color:var(--soft);max-width:38em">During my studies, I gained experience at PwC, where I represented the company at the St. Petersburg International Economic Forum, interviewing international leaders and industry experts.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:34px clamp(1.6rem,5vw,4rem) minmax(0,1fr);gap:clamp(10px,3vw,28px);padding-block:clamp(26px,4vw,38px);border-top:1px solid var(--line)">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#EFE8D9"></circle><rect x="7" y="19" width="6" height="8" fill="#B7A47F"></rect><rect x="14" y="13" width="6" height="14" fill="#7C4A28"></rect><rect x="21" y="7" width="6" height="20" fill="#5E3720"></rect></svg>
+        <span style="font-family:var(--mono);font-size:.85rem;color:var(--putty);padding-top:6px">02</span>
+        <div>
+          <h3 style="font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.55rem);margin:0 0 10px">Marketing internship - Stable Production, Los Angeles</h3>
+          <p style="margin:0;color:var(--soft);max-width:38em">A marketing internship at Stable Production in Los Angeles, where I worked on market and competitor research and international client projects.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:34px clamp(1.6rem,5vw,4rem) minmax(0,1fr);gap:clamp(10px,3vw,28px);padding-block:clamp(26px,4vw,38px);border-block:1px solid var(--line)">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#EFE8D9"></circle><circle cx="13" cy="17" r="8" fill="#7C4A28"></circle><circle cx="21" cy="17" r="8" fill="#B7A47F"></circle></svg>
+        <span style="font-family:var(--mono);font-size:.85rem;color:var(--putty);padding-top:6px">03</span>
+        <div>
+          <h3 style="font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.55rem);margin:0 0 10px">Volunteering &amp; community impact</h3>
+          <p style="margin:0;color:var(--soft);max-width:38em">In Germany, I spent a year with Bundesfreiwilligendienst (BFD) at Neue Zeiten e.V., supporting educational and integration programmes for children and adults from diverse cultural backgrounds. I organised workshops, created learning materials, supported German language learning and helped participants navigate social integration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showResults }}" hint-placeholder-val="{{ true }}">
+  <section data-reveal="1" style="max-width:1320px;margin-inline:auto;padding:clamp(24px,4vw,40px) clamp(20px,5vw,64px) clamp(48px,8vw,88px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(10px,2vw,18px)">
+      <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent)">(03)</span><h2 style="font-family:var(--disp);font-weight:400;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.06;margin:0;letter-spacing:-.01em">Projects &amp; cases</h2></div>
+      <p style="margin:0;max-width:36ch;color:var(--soft);font-size:.95rem;text-wrap:pretty">My own ventures and client projects, in numbers. The arrow opens the full case.</p>
+    </div>
+    <div style="margin-top:clamp(14px,2vw,22px);display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr));gap:1px;background:var(--line);border:1px solid var(--line)">
+      <a href="#top" onClick="{{ c7 }}" data-row="1" style="display:flex;flex-direction:column;gap:18px;padding:clamp(20px,2.6vw,30px);background:#fff;text-decoration:none;color:var(--ink);transition:background-color .3s ease" style-hover="background-color:#FBF8F1;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+          <div style="display:flex;gap:14px;align-items:baseline;min-width:0">
+            <span style="font-family:var(--mono);font-size:.78rem;color:var(--accent)">07</span>
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0"><span style="font-family:var(--disp);font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.15">Kapoosta</span><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Strategy &middot; product development</span></span>
+          </div>
+          <span aria-label="Open case" style="flex:none;width:44px;height:44px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--accent);transition:background-color .25s ease,color .25s ease" style-hover="background-color:var(--accent);color:#F6F2E9">&rarr;</span>
+        </div>
+        <div style="margin-top:auto">
+          <p style="margin:0 0 12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Businesses reached &middot; 3 years</p>
+          <div style="display:flex;align-items:flex-end;gap:8px;height:64px"><div data-bar="1" style="flex:1;height:22%;background:var(--putty);transform-origin:bottom"></div><div data-bar="1" style="flex:1;height:48%;background:var(--putty);transform-origin:bottom"></div><div data-bar="1" style="flex:1;height:72%;background:var(--accent);transform-origin:bottom"></div><div data-bar="1" style="flex:1;height:100%;background:var(--accent-strong);transform-origin:bottom"></div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-top:14px;border-top:1px solid var(--line)"><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Businesses</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;color:var(--accent-strong)">~200</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Team</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">20+</b></div></div>
+      </a>
+      <a href="#top" onClick="{{ c1 }}" data-row="1" style="display:flex;flex-direction:column;gap:18px;padding:clamp(20px,2.6vw,30px);background:#fff;text-decoration:none;color:var(--ink);transition:background-color .3s ease" style-hover="background-color:#FBF8F1;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+          <div style="display:flex;gap:14px;align-items:baseline;min-width:0">
+            <span style="font-family:var(--mono);font-size:.78rem;color:var(--accent)">01</span>
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0"><span style="font-family:var(--disp);font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.15">Pskov Equestrian Tourism Centre</span><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Marketing strategy &middot; customer journey</span></span>
+          </div>
+          <span aria-label="Open case" style="flex:none;width:44px;height:44px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--accent);transition:background-color .25s ease,color .25s ease" style-hover="background-color:var(--accent);color:#F6F2E9">&rarr;</span>
+        </div>
+        <div style="margin-top:auto">
+          <p style="margin:0 0 12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Occupancy &middot; before / after</p>
+          <div style="display:flex;flex-direction:column;gap:12px"><div><div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--soft);margin-bottom:6px"><span>Before</span><span>50&ndash;70%</span></div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:60%;background:var(--putty);transform-origin:left"></div></div></div><div><div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--soft);margin-bottom:6px"><span>After</span><span>100% sold</span></div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--accent);transform-origin:left"></div></div></div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-top:14px;border-top:1px solid var(--line)"><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Marketing return</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;color:var(--accent-strong)">320%</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Tours</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">Sold out</b></div></div>
+      </a>
+      <a href="#top" onClick="{{ c2 }}" data-row="1" style="display:flex;flex-direction:column;gap:18px;padding:clamp(20px,2.6vw,30px);background:#fff;text-decoration:none;color:var(--ink);transition:background-color .3s ease" style-hover="background-color:#FBF8F1;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+          <div style="display:flex;gap:14px;align-items:baseline;min-width:0">
+            <span style="font-family:var(--mono);font-size:.78rem;color:var(--accent)">02</span>
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0"><span style="font-family:var(--disp);font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.15">Dubai Equestrian Trainer</span><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Content strategy &middot; personal branding</span></span>
+          </div>
+          <span aria-label="Open case" style="flex:none;width:44px;height:44px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--accent);transition:background-color .25s ease,color .25s ease" style-hover="background-color:var(--accent);color:#F6F2E9">&rarr;</span>
+        </div>
+        <div style="margin-top:auto">
+          <p style="margin:0 0 12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Reach &middot; first month</p>
+          <svg viewBox="0 0 240 64" width="100%" height="64" aria-hidden="true" preserveAspectRatio="none"><polyline data-draw="1" points="4,60 40,55 76,49 112,38 148,32 184,17 236,4" fill="none" stroke="#7C4A28" stroke-width="2" stroke-dasharray="400" vector-effect="non-scaling-stroke"></polyline></svg>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-top:14px;border-top:1px solid var(--line)"><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Best video</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;color:var(--accent-strong)">1M+ views</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Filmed</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">Dubai &harr; Berlin</b></div></div>
+      </a>
+      <a href="#top" onClick="{{ c3 }}" data-row="1" style="display:flex;flex-direction:column;gap:18px;padding:clamp(20px,2.6vw,30px);background:#fff;text-decoration:none;color:var(--ink);transition:background-color .3s ease" style-hover="background-color:#FBF8F1;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+          <div style="display:flex;gap:14px;align-items:baseline;min-width:0">
+            <span style="font-family:var(--mono);font-size:.78rem;color:var(--accent)">03</span>
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0"><span style="font-family:var(--disp);font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.15">Avatar &middot; Equine-Assisted Therapy</span><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Brand strategy &middot; positioning</span></span>
+          </div>
+          <span aria-label="Open case" style="flex:none;width:44px;height:44px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--accent);transition:background-color .25s ease,color .25s ease" style-hover="background-color:var(--accent);color:#F6F2E9">&rarr;</span>
+        </div>
+        <div style="margin-top:auto">
+          <p style="margin:0 0 12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">From concept to brand</p>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px"><div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--putty);transform-origin:left"></div></div><span style="display:block;margin-top:6px;font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)">Strategy</span></div><div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--putty);transform-origin:left"></div></div><span style="display:block;margin-top:6px;font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)">Positioning</span></div><div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--accent);transform-origin:left"></div></div><span style="display:block;margin-top:6px;font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)">Journey</span></div><div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--accent-strong);transform-origin:left"></div></div><span style="display:block;margin-top:6px;font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)">Brand book</span></div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-top:14px;border-top:1px solid var(--line)"><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Deliverable</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;color:var(--accent-strong)">Launch-ready brand</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">My role</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">Strategy &rarr; Brand book</b></div></div>
+      </a>
+      <a href="#top" onClick="{{ c4 }}" data-row="1" style="display:flex;flex-direction:column;gap:18px;padding:clamp(20px,2.6vw,30px);background:#fff;text-decoration:none;color:var(--ink);transition:background-color .3s ease" style-hover="background-color:#FBF8F1;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+          <div style="display:flex;gap:14px;align-items:baseline;min-width:0">
+            <span style="font-family:var(--mono);font-size:.78rem;color:var(--accent)">04</span>
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0"><span style="font-family:var(--disp);font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.15">Novosibirsk Networking Event</span><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Event management &middot; partnerships</span></span>
+          </div>
+          <span aria-label="Open case" style="flex:none;width:44px;height:44px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--accent);transition:background-color .25s ease,color .25s ease" style-hover="background-color:var(--accent);color:#F6F2E9">&rarr;</span>
+        </div>
+        <div style="margin-top:auto">
+          <p style="margin:0 0 12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Tickets sold</p>
+          <div style="display:flex;flex-direction:column;gap:12px"><div><div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--soft);margin-bottom:6px"><span>Caf&eacute; meetup</span><span>idea</span></div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:18%;background:var(--putty);transform-origin:left"></div></div></div><div><div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--soft);margin-bottom:6px"><span>Networking evening</span><span>sold out</span></div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--accent);transform-origin:left"></div></div></div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding-top:14px;border-top:1px solid var(--line)"><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Prep</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">1 month</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Speakers</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">5</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Result</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;color:var(--accent-strong)">Sold out</b></div></div>
+      </a>
+      <a href="#top" onClick="{{ c5 }}" data-row="1" style="display:flex;flex-direction:column;gap:18px;padding:clamp(20px,2.6vw,30px);background:#fff;text-decoration:none;color:var(--ink);transition:background-color .3s ease" style-hover="background-color:#FBF8F1;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+          <div style="display:flex;gap:14px;align-items:baseline;min-width:0">
+            <span style="font-family:var(--mono);font-size:.78rem;color:var(--accent)">05</span>
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0"><span style="font-family:var(--disp);font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.15">A Helicopter at a Horse Stable</span><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Project management &middot; negotiation</span></span>
+          </div>
+          <span aria-label="Open case" style="flex:none;width:44px;height:44px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--accent);transition:background-color .25s ease,color .25s ease" style-hover="background-color:var(--accent);color:#F6F2E9">&rarr;</span>
+        </div>
+        <div style="margin-top:auto">
+          <p style="margin:0 0 12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Budget vs. production value</p>
+          <div style="display:flex;flex-direction:column;gap:12px"><div><div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--soft);margin-bottom:6px"><span>Cash budget</span><span>none</span></div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:2%;background:var(--putty);transform-origin:left"></div></div></div><div><div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--soft);margin-bottom:6px"><span>Value via barter</span><span>~1M &#8381;</span></div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--accent);transform-origin:left"></div></div></div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding-top:14px;border-top:1px solid var(--line)"><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">People</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">~30</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Prep</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">2&ndash;3 wks</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Value</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;color:var(--accent-strong)">~1M &#8381;</b></div></div>
+      </a>
+      <a href="#top" onClick="{{ c6 }}" data-row="1" style="display:flex;flex-direction:column;gap:18px;padding:clamp(20px,2.6vw,30px);background:#fff;text-decoration:none;color:var(--ink);transition:background-color .3s ease" style-hover="background-color:#FBF8F1;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+          <div style="display:flex;gap:14px;align-items:baseline;min-width:0">
+            <span style="font-family:var(--mono);font-size:.78rem;color:var(--accent)">06</span>
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0"><span style="font-family:var(--disp);font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.15">Fashion Meets Horses</span><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Creative direction &middot; production</span></span>
+          </div>
+          <span aria-label="Open case" style="flex:none;width:44px;height:44px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--accent);transition:background-color .25s ease,color .25s ease" style-hover="background-color:var(--accent);color:#F6F2E9">&rarr;</span>
+        </div>
+        <div style="margin-top:auto">
+          <p style="margin:0 0 12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Shoots in one year</p>
+          <div style="display:flex;align-items:flex-end;gap:8px;height:64px"><div data-bar="1" style="flex:1;height:40%;background:var(--putty);transform-origin:bottom"></div><div data-bar="1" style="flex:1;height:55%;background:var(--putty);transform-origin:bottom"></div><div data-bar="1" style="flex:1;height:70%;background:var(--accent);transform-origin:bottom"></div><div data-bar="1" style="flex:1;height:85%;background:var(--accent);transform-origin:bottom"></div><div data-bar="1" style="flex:1;height:100%;background:var(--accent-strong);transform-origin:bottom"></div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding-top:14px;border-top:1px solid var(--line)"><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Projects</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;color:var(--accent-strong)">5+</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">People</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">25&ndash;30</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Span</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">1 year</b></div></div>
+      </a>
+      <a href="#top" onClick="{{ c8 }}" data-row="1" style="display:flex;flex-direction:column;gap:18px;padding:clamp(20px,2.6vw,30px);background:#fff;text-decoration:none;color:var(--ink);transition:background-color .3s ease" style-hover="background-color:#FBF8F1;color:var(--ink)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+          <div style="display:flex;gap:14px;align-items:baseline;min-width:0">
+            <span style="font-family:var(--mono);font-size:.78rem;color:var(--accent)">08</span>
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0"><span style="font-family:var(--disp);font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.15">Equesolution</span><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Business development &middot; go-to-market</span></span>
+          </div>
+          <span aria-label="Open case" style="flex:none;width:44px;height:44px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--accent);transition:background-color .25s ease,color .25s ease" style-hover="background-color:var(--accent);color:#F6F2E9">&rarr;</span>
+        </div>
+        <div style="margin-top:auto">
+          <p style="margin:0 0 12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Businesses advised</p>
+          <div style="display:flex;flex-direction:column;gap:12px"><div><div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--soft);margin-bottom:6px"><span>Solo practice</span><span>start</span></div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:10%;background:var(--putty);transform-origin:left"></div></div></div><div><div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--soft);margin-bottom:6px"><span>Agency</span><span>40+</span></div><div style="height:10px;background:var(--raised)"><div data-grow="1" style="height:100%;width:100%;background:var(--accent);transform-origin:left"></div></div></div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-top:14px;border-top:1px solid var(--line)"><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Businesses advised</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;color:var(--accent-strong)">40+</b></div><div><span style="display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px">Team size</span><b style="display:block;font-family:var(--disp);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;line-height:1;">Up to 8</b></div></div>
+      </a>
+    </div>
+  </section>
+  </sc-if>
+
+  <section style="max-width:1320px;margin-inline:auto;padding:0 clamp(20px,5vw,64px) clamp(48px,8vw,88px)">
+    <div style="padding-top:clamp(24px,4vw,36px);border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
+      <p style="margin:0;font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.2">The work these experiences led to</p>
+      <a href="#top" onClick="{{ goCases }}" style="font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#F6F2E9;background:var(--ink);padding:15px 22px;min-height:48px;display:inline-flex;align-items:center;gap:12px;transition:background-color .25s ease" style-hover="background-color:var(--accent-strong);color:#F6F2E9">See all cases <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<section id="contact" data-reveal="1" style="border-top:1px solid var(--line);background:var(--raised);scroll-margin-top:80px">
+  <div style="max-width:1320px;margin-inline:auto;padding:clamp(48px,8vw,88px) clamp(20px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,5vw,56px);align-items:start">
+    <div>
+      <p style="margin:0 0 16px;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)">Contact</p>
+      <h2 style="font-family:var(--disp);font-weight:400;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.06;margin:0 0 20px;letter-spacing:-.01em">Let&rsquo;s talk about your project</h2>
+      <p style="margin:0 0 28px;max-width:38ch;color:var(--soft);text-wrap:pretty">Berlin-based, working internationally. Telegram and WhatsApp are the fastest ways to reach me.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:400px">
+        <a href="https://t.me/Veronika_Equesolution" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--ink);min-height:44px" style-hover="border-color:var(--accent)">
+          <span style="display:flex;flex-direction:column;gap:3px"><span style="font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Telegram</span><b style="font-weight:600;font-size:.98rem">@Veronika_Equesolution</b></span>
+          <span style="font-family:var(--mono);color:var(--accent)">&rarr;</span>
+        </a>
+        <a href="https://wa.me/79306930462" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--ink);min-height:44px" style-hover="border-color:var(--accent)">
+          <span style="display:flex;flex-direction:column;gap:3px"><span style="font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">WhatsApp</span><b style="font-weight:600;font-size:.98rem">+7 930 693-04-62</b></span>
+          <span style="font-family:var(--mono);color:var(--accent)">&rarr;</span>
+        </a>
+        <a href="mailto:v.equesolution@gmail.com" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--ink);min-height:44px" style-hover="border-color:var(--accent)">
+          <span style="display:flex;flex-direction:column;gap:3px"><span style="font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Email</span><b style="font-weight:600;font-size:.98rem">v.equesolution@gmail.com</b></span>
+          <span style="font-family:var(--mono);color:var(--accent)">&rarr;</span>
+        </a>
+        <a href="https://www.linkedin.com/in/veronika-albero/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--ink);min-height:44px" style-hover="border-color:var(--accent)">
+          <span style="display:flex;flex-direction:column;gap:3px"><span style="font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">LinkedIn</span><b style="font-weight:600;font-size:.98rem">in/veronika-albero</b></span>
+          <span style="font-family:var(--mono);color:var(--accent)">&rarr;</span>
+        </a>
+        <a href="https://www.instagram.com/veronika_equesolution/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--ink);min-height:44px" style-hover="border-color:var(--accent)">
+          <span style="display:flex;flex-direction:column;gap:3px"><span style="font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Instagram</span><b style="font-weight:600;font-size:.98rem">@veronika_equesolution</b></span>
+          <span style="font-family:var(--mono);color:var(--accent)">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <form onSubmit="{{ sendForm }}" style="border:1px solid var(--line);background:#fff;padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:16px">
+      <p style="margin:0;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)">Send a message</p>
+      <label style="display:flex;flex-direction:column;gap:7px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Name
+        <input name="name" type="text" required="required" placeholder="Your name" style="font:inherit;font-family:'Public Sans',Helvetica,Arial,sans-serif;font-size:.98rem;text-transform:none;letter-spacing:normal;color:var(--ink);padding:12px 14px;border:1px solid var(--line);background:var(--bg);min-height:44px" />
+      </label>
+      <label style="display:flex;flex-direction:column;gap:7px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Email
+        <input name="email" type="email" required="required" placeholder="you@company.com" style="font:inherit;font-family:'Public Sans',Helvetica,Arial,sans-serif;font-size:.98rem;text-transform:none;letter-spacing:normal;color:var(--ink);padding:12px 14px;border:1px solid var(--line);background:var(--bg);min-height:44px" />
+      </label>
+      <label style="display:flex;flex-direction:column;gap:7px;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)">Project
+        <textarea name="message" rows="5" required="required" placeholder="What are you working on, and what do you need?" style="font:inherit;font-family:'Public Sans',Helvetica,Arial,sans-serif;font-size:.98rem;text-transform:none;letter-spacing:normal;color:var(--ink);padding:12px 14px;border:1px solid var(--line);background:var(--bg);resize:vertical"></textarea>
+      </label>
+      <button type="submit" style="font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;padding:15px 22px;min-height:48px;border:none;background:var(--ink);color:#F6F2E9;cursor:pointer" style-hover="background:var(--accent-strong)">Send request</button>
+    </form>
+  </div>
+</section>
+
+<footer style="background:var(--deep);color:#F1ECDD;border-top:1px solid var(--line-deep)">
+  <div style="max-width:1320px;margin-inline:auto;padding:clamp(36px,6vw,56px) clamp(20px,5vw,64px);display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="logo-va-light.png" alt="VA" style="display:block;height:36px;width:auto;flex:none" />
+        <span style="font-family:'Noto Serif Display',serif;font-weight:500;font-size:1.45rem">Veronika Albero</span>
+      </div>
+      <p style="margin:12px 0 0;max-width:32ch;color:#B9B49F">Marketing strategist and entrepreneur based in Berlin, working internationally.</p>
+    </div>
+    <div style="display:flex;gap:clamp(28px,5vw,56px);flex-wrap:wrap;font-family:var(--mono);font-size:.78rem">
+      <div>
+        <span style="display:block;color:#B9B49F;text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;margin-bottom:10px">Navigate</span>
+        <a href="#top" onClick="{{ goHome }}" style="text-decoration:none;display:block;padding-block:3px;color:#F1ECDD">Home</a>
+        <a href="#top" onClick="{{ goCases }}" style="text-decoration:none;display:block;padding-block:3px;color:#F1ECDD">Cases</a>
+        <a href="#top" onClick="{{ goAbout }}" style="text-decoration:none;display:block;padding-block:3px;color:#F1ECDD">Experience</a>
+      </div>
+      <div>
+        <span style="display:block;color:#B9B49F;text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;margin-bottom:10px">Contact</span>
+        <a href="https://t.me/Veronika_Equesolution" target="_blank" rel="noopener" style="text-decoration:none;display:block;padding-block:3px;color:#F1ECDD">Telegram</a>
+        <a href="https://wa.me/79306930462" target="_blank" rel="noopener" style="text-decoration:none;display:block;padding-block:3px;color:#F1ECDD">WhatsApp</a>
+        <a href="mailto:v.equesolution@gmail.com" style="text-decoration:none;display:block;padding-block:3px;color:#F1ECDD">Email</a>
+        <a href="https://www.linkedin.com/in/veronika-albero/" target="_blank" rel="noopener" style="text-decoration:none;display:block;padding-block:3px;color:#F1ECDD">LinkedIn</a>
+        <a href="https://www.instagram.com/veronika_equesolution/" target="_blank" rel="noopener" style="text-decoration:none;display:block;padding-block:3px;color:#F1ECDD">Instagram</a>
+      </div>
+      <div>
+        <span style="display:block;color:#B9B49F;text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;margin-bottom:10px">Languages</span>
+        <span style="display:block;padding-block:3px">English</span>
+        <span style="display:block;padding-block:3px">German</span>
+        <span style="display:block;padding-block:3px">Russian</span>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1320px;margin-inline:auto;padding:0 clamp(20px,5vw,64px) clamp(24px,4vw,36px)">
+    <div style="padding-top:20px;border-top:1px solid var(--line-deep);font-family:var(--mono);font-size:.7rem;color:#B9B49F">Veronika Albero &middot; Berlin, Germany</div>
+  </div>
+</footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#7C4A28&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#7C4A28&quot;,&quot;#2F4A3C&quot;,&quot;#3A3F6B&quot;,&quot;#7A2E3A&quot;],&quot;section&quot;:&quot;Identity&quot;},&quot;showResults&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;animations&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { page: 'home', open: 1, p: 0, caseId: 1, narrow: typeof window !== 'undefined' && window.innerWidth < 820 };
+  slideRef = React.createRef();
+  coverRef = React.createRef();
+  fitCover(){
+    const el = this.coverRef.current;
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY;
+    const mh = Math.max(260, Math.round(window.innerHeight - top - 24));
+    if (Math.abs((this.state.coverMax || 0) - mh) > 2) this.setState({ coverMax: mh });
+  }
+  startPulse(){
+    if (this._pulse) return;
+    let i = 0;
+    this._pulse = setInterval(() => { if ((this.state.bh == null ? -1 : this.state.bh) < 0) { this.setState({ bPulse: i % 8 }); i++; } }, 1400);
+  }
+  bRef = (el) => {
+    if (this._bio) { this._bio.disconnect(); this._bio = null; }
+    if (!el || this.state.bShown) return;
+    this._bio = new IntersectionObserver((es) => { if (es.some(x => x.isIntersecting)) { this.setState({ bShown: true }); this._bio.disconnect(); this.startPulse(); } }, { threshold: 0.25 });
+    this._bio.observe(el);
+  };
+
+  slide(dir){
+    return () => {
+      const n = this.cases().length;
+      this.setState(st => ({ slide: (((st.slide == null ? 4 : st.slide) + dir) % n + n) % n }), () => {
+        const el = this.slideRef.current;
+        if (el && el.animate) el.animate([{ opacity: 0, transform: 'translateX(' + (dir * 24) + 'px)' }, { opacity: 1, transform: 'none' }], { duration: 450, easing: 'cubic-bezier(.2,.7,.2,1)' });
+      });
+    };
+  }
+
+  componentDidMount(){
+    this._onRs = () => { const n = window.innerWidth < 820, b = window.innerWidth < 1000; if (n !== this.state.narrow || b !== this.state.bnarrow) this.setState({ narrow: n, bnarrow: b }); };
+    this._onRs();
+    window.addEventListener('resize', this._onRs);
+    this._onFit = () => this.fitCover();
+    window.addEventListener('resize', this._onFit);
+    requestAnimationFrame(this._onFit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(this._onFit);
+    this.reveal();
+    this.counters();
+    this.chrome();
+    requestAnimationFrame(() => this.animateCharts(document));
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('resize', this._onRs);
+    window.removeEventListener('resize', this._onFit);
+    if (this._bio) this._bio.disconnect();
+    if (this._pulse) clearInterval(this._pulse);
+    if (this._io) this._io.disconnect();
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._onMove) window.removeEventListener('mousemove', this._onMove);
+    if (this._onLeave) document.removeEventListener('mouseleave', this._onLeave);
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    ['_ring','_dot','_bar'].forEach(k => { if (this[k] && this[k].parentNode) this[k].parentNode.removeChild(this[k]); this[k] = null; });
+  }
+
+  chrome(){
+    if (this._chromeReady) return;
+    this._chromeReady = true;
+    const accent = this.props.accent || '#7C4A28';
+
+    const bar = document.createElement('div');
+    bar.style.cssText = 'position:fixed;top:0;left:0;height:2px;width:0%;background:' + accent + ';z-index:60;pointer-events:none;transition:width .12s linear';
+    document.body.appendChild(bar);
+    this._bar = bar;
+    this._onScroll = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0) + '%';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+
+    const fine = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
+    const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if (!fine || still || this.props.animations === false) return;
+
+    const ring = document.createElement('div');
+    ring.style.cssText = 'position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid ' + accent + ';border-radius:50%;pointer-events:none;z-index:9998;opacity:0;background:transparent;transition:opacity .3s ease,width .28s cubic-bezier(.2,.7,.2,1),height .28s cubic-bezier(.2,.7,.2,1),margin .28s cubic-bezier(.2,.7,.2,1),background-color .28s ease,border-color .28s ease';
+    const dot = document.createElement('div');
+    dot.style.cssText = 'position:fixed;left:0;top:0;width:5px;height:5px;margin:-2.5px 0 0 -2.5px;border-radius:50%;background:' + accent + ';pointer-events:none;z-index:9999;opacity:0;transition:opacity .3s ease';
+    document.body.appendChild(ring); document.body.appendChild(dot);
+    this._ring = ring; this._dot = dot;
+
+    let x = window.innerWidth / 2, y = window.innerHeight / 2, rx = x, ry = y, hot = false;
+    this._onMove = (e) => {
+      x = e.clientX; y = e.clientY;
+      dot.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+      ring.style.opacity = '1'; dot.style.opacity = '1';
+      const t = e.target && e.target.closest ? e.target.closest('a,button,input,textarea,img,[data-cursor]') : null;
+      const on = !!t;
+      if (on === hot) return;
+      hot = on;
+      ring.style.width = on ? '56px' : '34px';
+      ring.style.height = on ? '56px' : '34px';
+      ring.style.margin = on ? '-28px 0 0 -28px' : '-17px 0 0 -17px';
+      ring.style.background = on ? 'rgba(124,74,40,.10)' : 'transparent';
+    };
+    this._onLeave = () => { ring.style.opacity = '0'; dot.style.opacity = '0'; };
+    window.addEventListener('mousemove', this._onMove, { passive: true });
+    document.addEventListener('mouseleave', this._onLeave);
+    const loop = () => {
+      rx += (x - rx) * 0.16; ry += (y - ry) * 0.16;
+      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)';
+      this._raf = requestAnimationFrame(loop);
+    };
+    this._raf = requestAnimationFrame(loop);
+  }
+
+  componentDidUpdate(pp, ps){
+    if (this.coverRef.current) requestAnimationFrame(() => requestAnimationFrame(() => this.fitCover()));
+    if (ps && ps.page !== this.state.page){
+      this.counters();
+      requestAnimationFrame(() => this.animateCharts(document));
+    }
+    this.reveal();
+  }
+
+  get root(){ return document.querySelector('[data-dc-root]') || document.body; }
+
+  shade(hex, k){
+    const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(String(hex || ''));
+    if (!m) return hex;
+    const c = [1,2,3].map(i => Math.max(0, Math.min(255, Math.round(parseInt(m[i],16) * k))));
+    return '#' + c.map(x => x.toString(16).padStart(2,'0')).join('');
+  }
+
+  reveal(){
+    if (this.props.animations === false) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (!els.length || !('IntersectionObserver' in window)) return;
+    if (this._io) this._io.disconnect();
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        if (el.dataset.revealed === '1') { io.unobserve(el); return; }
+        el.dataset.revealed = '1';
+        el.animate([
+          { opacity: 0, transform: 'translateY(22px)' },
+          { opacity: 1, transform: 'none' }
+        ], { duration: 700, easing: 'cubic-bezier(.2,.7,.2,1)' });
+        this.animateCharts(el);
+        io.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    this._io = io;
+    els.forEach(el => { if (el.dataset.revealed !== '1') io.observe(el); });
+  }
+
+  animateCharts(scope){
+    if (!scope || !scope.querySelectorAll || this.props.animations === false) return;
+    scope.querySelectorAll('[data-grow]').forEach((el, i) => {
+      el.style.animation = 'none';
+      void el.offsetWidth;
+      el.style.animation = 'va-grow .9s cubic-bezier(.2,.7,.2,1) both ' + (i * 0.07).toFixed(2) + 's';
+    });
+    scope.querySelectorAll('[data-row]').forEach((el, i) => {
+      el.animate([{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }], { duration: 600, delay: i * 70, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' });
+    });
+    scope.querySelectorAll('[data-bar]').forEach((el, i) => {
+      el.animate([{ transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }], { duration: 700, delay: i * 90, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'both' });
+    });
+    scope.querySelectorAll('[data-draw]').forEach((el, i) => {
+      const len = el.getTotalLength ? el.getTotalLength() : 400;
+      const end = parseFloat(el.getAttribute('stroke-dashoffset') || '0');
+      el.animate([
+        { strokeDasharray: el.getAttribute('stroke-dasharray') || String(len), strokeDashoffset: len },
+        { strokeDasharray: el.getAttribute('stroke-dasharray') || String(len), strokeDashoffset: end }
+      ], { duration: 1200, delay: 120 + i * 140, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'both' });
+    });
+  }
+
+  counters(){
+    const host = document.querySelector('[data-counters]');
+    if (!host) { return; }
+    if (this.props.animations === false) { this.setState({ p: 1 }); return; }
+    if (host.dataset.ran === '1') { this.setState({ p: 1 }); return; }
+    if (!('IntersectionObserver' in window)) { this.setState({ p: 1 }); return; }
+    const io = new IntersectionObserver((ents) => {
+      if (!ents.some(e => e.isIntersecting)) return;
+      host.dataset.ran = '1';
+      io.disconnect();
+      const t0 = performance.now();
+      const tick = (now) => {
+        const k = Math.min(1, (now - t0) / 1400);
+        const eased = 1 - Math.pow(1 - k, 3);
+        this.setState({ p: eased });
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: 0.3 });
+    io.observe(host);
+  }
+
+  nav(page){
+    return (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      if (page === 'work'){
+        if (this.state.page !== 'home'){
+          this.setState({ page: 'home' }, () => {
+            requestAnimationFrame(() => {
+              const el = document.getElementById('work');
+              if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' });
+            });
+          });
+        } else {
+          const el = document.getElementById('work');
+          if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' });
+        }
+        return;
+      }
+      this.setState({ page }, () => window.scrollTo({ top: 0, behavior: 'auto' }));
+    };
+  }
+
+  toggle(n){
+    return () => {
+      const next = this.state.open === n ? null : n;
+      this.setState({ open: next }, () => {
+        if (next == null) return;
+        requestAnimationFrame(() => {
+          const panels = document.querySelectorAll('#projects > div > div');
+          const panel = panels[n - 1];
+          if (panel) this.animateCharts(panel);
+        });
+      });
+    };
+  }
+
+
+  cases(){
+    const A = 'var(--accent)', S = 'var(--accent-strong)', P = 'var(--putty)';
+    return [
+      {
+        n: 1, cover: 'va-c1-cover', gallery: ['va-c1-g1'],
+        coverSrc: 'case1-booth.jpg', coverRatio: '3/4', coverMaxW: '520px',
+        gallerySrc: ['case1-hall.jpg'], galleryRatio: '16/9', galleryMin: '100%',
+        kicker: 'Case 01 \u00b7 Marketing strategy',
+        title: 'A sold-out season for a centre that came asking for ads',
+        lede: 'The centre already had a strong, authentic product - immersive multi-day horse tours and an audience that had grown organically around the experience. They came to me for advertising. What they needed was a different journey.',
+        meta: [{k:'Role',v:'Marketing strategist'},{k:'Scope',v:'Strategy \u00b7 acquisition \u00b7 product'},{k:'Focus',v:'Customer journey'},{k:'Outcome',v:'100% occupancy'}],
+        stats: [{v:'320%',k:'Marketing return'},{v:'100%',k:'Tours sold'},{v:'50\u201370%',k:'Occupancy before'},{v:'1',k:'Season'}],
+        barsTitle: 'Occupancy \u00b7 before / after',
+        bars: [{k:'Before',v:'50\u201370%',w:'60%',c:P},{k:'After',v:'100% sold',w:'100%',c:A}],
+        barsNote: 'The same product, the same audience - a different route from first contact to a booked place.',
+        story: [
+          {h:'The brief',t:'They asked for advertising. The tours were already good and the audience already existed, so the gap was not awareness - it was everything between interest and a paid booking.'},
+          {h:'What I did',t:'Rebuilt the journey around the product they already had: how the tours were described and packaged, which audiences to speak to first, and what a guest should see and receive at each step before paying.'},
+          {h:'The result',t:'Occupancy went from 50\u201370% to a fully sold season, at a 320% return on marketing spend - the strongest marketing return of the projects here.'}
+        ],
+        quote: 'The product was never the problem. The route to it was.',
+        roles: ['Marketing strategy','Customer acquisition','Product development','Customer journey']
+      },
+      {
+        n: 2, cover: 'va-c2-cover', gallery: ['va-c2-g1','va-c2-g2'],
+        coverSrc: 'case2-cover.jpg',
+        gallerySrc: ['case2-horse.jpg','case2-stable.jpg'],
+        kicker: 'Case 02 \u00b7 Content strategy',
+        title: 'Personal branding for a trainer with no time for content',
+        lede: 'The trainer wanted to build her presence on social media, but had almost no time for content, was uncomfortable on camera, and didn\u2019t want to look like someone chasing influencer status. So we started with her story, not a content plan.',
+        meta: [{k:'Role',v:'Content strategist \u0026 producer'},{k:'Setup',v:'Dubai \u2194 Berlin, remote'},{k:'Scope',v:'Story \u00b7 formats \u00b7 production'},{k:'Outcome',v:'1M+ views'}],
+        stats: [{v:'1M+',k:'Views, best video'},{v:'Month 1',k:'Reach growth'},{v:'100%',k:'Remote work'},{v:'0',k:'Influencer posturing'}],
+        barsTitle: 'Reach \u00b7 first month, week by week',
+        bars: [{k:'Week 1',v:'Baseline',w:'22%',c:P},{k:'Week 2',v:'Growing',w:'45%',c:P},{k:'Week 3',v:'Growing',w:'70%',c:A},{k:'Week 4',v:'Peak',w:'100%',c:S}],
+        barsNote: 'Growth inside the first month, with the single strongest video passing a million views.',
+        story: [
+          {h:'The brief',t:'Presence on social media, from someone with a full training schedule, no comfort on camera and no wish to perform for an audience.'},
+          {h:'What I did',t:'Started from her story and expertise, then built formats that fit a working trainer\u2019s day - short filming blocks, content she could speak to without a script, and a production rhythm run remotely between Dubai and Berlin.'},
+          {h:'The result',t:'Reach grew through the first month and the best video passed a million views, with a voice that still reads as a professional trainer rather than an influencer.'}
+        ],
+        quote: 'We started with her story, not a content plan.',
+        roles: ['Content strategy','Personal branding','Content production','Project management']
+      },
+      {
+        n: 3, cover: 'va-c3-cover', gallery: [],
+        coverSrc: 'case3-hug.jpg', coverRatio: '3/4', coverMaxW: '560px',
+        gallerySrc: [],
+        kicker: 'Case 03 \u00b7 Brand strategy',
+        title: 'A brand for an experience nobody could explain',
+        lede: 'The owner of an equine-assisted therapy project came to me with one problem: she couldn\u2019t explain what the experience actually was. I went through the therapy session myself, so the brand could be built from the inside, not observed from outside.',
+        meta: [{k:'Role',v:'Brand strategist'},{k:'Scope',v:'Positioning \u00b7 journey \u00b7 creative'},{k:'Method',v:'Lived the session first'},{k:'Outcome',v:'Launch-ready brand'}],
+        stats: [{v:'Brand book',k:'Deliverable'},{v:'1',k:'Session lived through'},{v:'Full',k:'Customer journey'},{v:'Launch',k:'Ready state'}],
+        barsTitle: 'Clarity \u00b7 before / after',
+        bars: [{k:'Before',v:'Hard to describe',w:'25%',c:P},{k:'After',v:'One clear promise',w:'100%',c:A}],
+        barsNote: 'Positioning, customer journey and creative production came out of the session itself.',
+        story: [
+          {h:'The brief',t:'A real service with real effect, and no language for it: every attempt to describe the experience lost what made it work.'},
+          {h:'What I did',t:'Took the therapy session as a client, then built positioning and the customer journey from that experience, and carried it through to creative production.'},
+          {h:'The result',t:'A launch-ready brand: strategy, positioning and a brand book the owner can hand to anyone who needs to explain the offer.'}
+        ],
+        quote: 'To sell an experience, you have to have had it.',
+        roles: ['Brand strategy','Positioning','Customer journey','Creative production']
+      },
+      {
+        n: 4, cover: 'va-c4-cover', gallery: ['va-c4-g1','va-c4-g2'],
+        coverSrc: 'case4-rail.jpg', coverRatio: '3/4', coverMaxW: '560px',
+        gallerySrc: ['case4-glass.jpg','case4-table.jpg'],
+        kicker: 'Case 04 \u00b7 Event production',
+        title: 'From a caf\u00e9 meetup to a sold-out equestrian evening',
+        lede: 'What started as a caf\u00e9 meetup for like-minded equestrians became a full educational and networking evening in one month - dressed up, professionally lit, and deliberately closer to a business gathering than a stable get-together.',
+        meta: [{k:'Role',v:'Event lead'},{k:'Team',v:'2 people'},{k:'Timeframe',v:'1 month'},{k:'Outcome',v:'Sold out'}],
+        stats: [{v:'Sold out',k:'Tickets'},{v:'5',k:'Speakers'},{v:'1 month',k:'Idea to doors'},{v:'2',k:'People running it'}],
+        barsTitle: 'One month \u00b7 idea to doors open',
+        bars: [{k:'Week 1',v:'Concept \u0026 speakers',w:'35%',c:S},{k:'Week 2',v:'Partners \u0026 venue',w:'60%',c:A},{k:'Week 3',v:'Marketing \u0026 sales',w:'85%',c:A},{k:'Week 4',v:'Production',w:'100%',c:P}],
+        barsNote: 'Two people, five speakers, one month - and a room that filled before the date.',
+        story: [
+          {h:'The brief',t:'An informal meetup idea, with the ambition of an evening equestrians would treat as professional time rather than a hobby meet.'},
+          {h:'What I did',t:'Built the programme and the speaker line-up, brought in partners, ran marketing and ticket sales, produced the evening and spoke on stage.'},
+          {h:'The result',t:'A sold-out educational and networking evening, produced in a month by a team of two.'}
+        ],
+        quote: 'Dressed up, professionally lit, closer to a business gathering than a stable get-together.',
+        roles: ['Event management','Partnership development','Marketing','Public speaking']
+      },
+      {
+        n: 5, cover: 'va-case-cover', gallery: ['va-case-g1','va-case-g2'],
+        coverSrc: 'case5-heli-v2.jpg',
+        gallerySrc: ['case5-g1.jpg','case5-g2.jpg'],
+        kicker: 'Case 05 \u00b7 Production',
+        title: 'A helicopter at a horse stable? Sounds crazy. Let\u2019s make it happen.',
+        lede: 'Horses, a helicopter, professional models and an equestrian club - coordinated across a club, a pilot, a photographer and around thirty people, in two to three weeks, built on barter instead of a six-figure budget.',
+        meta: [{k:'Role',v:'Project lead \u0026 producer'},{k:'Timeframe',v:'2\u20133 weeks'},{k:'Partners',v:'Club \u00b7 pilot \u00b7 photographer'},{k:'Budget model',v:'Barter'}],
+        stats: [{v:'~30',k:'People involved'},{v:'2\u20133',k:'Weeks to prepare'},{v:'~1M\u00a0\u20bd',k:'Value, not spent'},{v:'4',k:'Partners aligned'}],
+        barsTitle: 'Cost model \u00b7 market vs actual',
+        bars: [{k:'Market cost of a shoot like this',v:'~1M \u20bd',w:'100%',c:P},{k:'Cash actually spent',v:'~5%',w:'5%',c:A}],
+        barsNote: 'Everything else was covered by barter: the club got content, the pilot got footage, the models got portfolio frames.',
+        story: [
+          {h:'Negotiation',t:'Four parties, one shared interest: everyone needed content they could not produce alone.'},
+          {h:'Safety',t:'Horses and rotor noise: a rehearsal day, fixed distances and a single person calling the shots.'},
+          {h:'Output',t:'A frame set that every partner reused for a year, from club marketing to model portfolios.'}
+        ],
+        quote: 'Nobody had a reference for this. That was exactly the reason to do it.',
+        roles: ['Project management','Partnership development','Negotiation','Production']
+      },
+      {
+        n: 6, cover: 'va-c6-cover', gallery: ['va-c6-g1','va-c6-g2','va-c6-g3'],
+        coverSrc: 'case6-1.jpg',
+        gallerySrc: ['case6-2.jpg','case6-3.jpg','case6-4.jpg'],
+        kicker: 'Case 06 \u00b7 Creative direction',
+        title: 'Fashion meets horses',
+        lede: 'I wanted to bring two worlds that rarely meet into the same frame: fashion and horses. Photoshoots let people experience the equestrian world without being riders, while horse owners earned from their horses and got something different from a normal day at the stable.',
+        meta: [{k:'Role',v:'Creative director \u0026 producer'},{k:'Span',v:'1 year'},{k:'Scale',v:'25\u201330 people per project'},{k:'Format',v:'5+ photoshoots'}],
+        stats: [{v:'5+',k:'Projects'},{v:'25\u201330',k:'People per shoot'},{v:'1 year',k:'Span'},{v:'2',k:'Worlds joined'}],
+        barsTitle: 'Value on both sides',
+        bars: [{k:'Guests \u00b7 access to the equestrian world',v:'Full day',w:'100%',c:A},{k:'Owners \u00b7 income from their horses',v:'Per shoot',w:'82%',c:S}],
+        barsNote: 'The format only works if both sides gain: participants get the experience, owners get paid work for their horses.',
+        story: [
+          {h:'The idea',t:'Fashion and the equestrian world rarely share a frame. Photoshoots were the format that could hold both without either becoming a prop.'},
+          {h:'What I did',t:'Creative direction and production across five and more projects over a year: concept, casting, locations, horse owners, crews of twenty-five to thirty people, and every stakeholder in between.'},
+          {h:'The result',t:'A repeatable format: people got into the equestrian world without riding, owners earned from their horses, and both sides came back.'}
+        ],
+        quote: 'Two worlds that rarely meet, in the same frame.',
+        roles: ['Creative direction','Production','Project management','Stakeholder management']
+      },
+      {
+        n: 7, cover: 'va-c7-cover', gallery: ['va-c7-g1','va-c7-g2'],
+        coverSrc: 'case7-seminar.jpg',
+        gallerySrc: ['case7-team.jpg','case7-steps.jpg'],
+        kicker: 'Case 07 \u00b7 Strategy \u0026 product',
+        title: 'From a mission without a product to environmental consulting',
+        lede: 'When I joined Kapoosta, we had a mission but no clear product. The first hypothesis - a map of green businesses - didn\u2019t monetise, so we pivoted to environmental consulting for SMEs and built the business around it.',
+        meta: [{k:'Role',v:'Strategy \u0026 product lead'},{k:'Team',v:'20+ people'},{k:'Scope',v:'Research \u00b7 product \u00b7 pivot'},{k:'Outcome',v:'~200 businesses'}],
+        stats: [{v:'~200',k:'Businesses served'},{v:'20+',k:'Team'},{v:'1',k:'Pivot that worked'},{v:'3 years',k:'Span'}],
+        barsTitle: 'Businesses reached \u00b7 by year',
+        bars: [{k:'Year 1',v:'First clients',w:'22%',c:P},{k:'Year 2',v:'Consulting model',w:'48%',c:A},{k:'Year 3',v:'~200 businesses',w:'100%',c:S}],
+        barsNote: 'Growth followed the pivot: a paid service for SMEs instead of a directory nobody would pay for.',
+        story: [
+          {h:'The starting point',t:'A mission to make business greener, a team forming around it, and no product that anyone was paying for.'},
+          {h:'What I did',t:'Tested the first hypothesis - a map of green businesses - found no path to revenue, and led the pivot to environmental consulting for small and medium businesses: the offer, the delivery model and the team behind it.'},
+          {h:'The result',t:'Around two hundred businesses served and a team of more than twenty working on a product with a paying market.'}
+        ],
+        quote: 'The first hypothesis did not monetise. That was information, not failure.',
+        roles: ['Strategy','Product development','Market research','Leadership']
+      },
+      {
+        n: 8, cover: 'va-c8-cover', gallery: ['va-c8-g1'],
+        coverSrc: 'case8-booth.jpg', coverRatio: '3/4', coverMaxW: '460px',
+        gallerySrc: ['case8-saddle.jpg'], galleryRatio: '16/9', galleryMin: '100%',
+        kicker: 'Case 08 \u00b7 Business development',
+        title: 'The agency behind several of these cases',
+        lede: 'Businesses came with a problem, I analysed it, built the solution and took it through implementation - while also building the team and the agency itself alongside the client work.',
+        meta: [{k:'Role',v:'Founder \u0026 business development'},{k:'Team',v:'Up to 8'},{k:'Scope',v:'Analysis to implementation'},{k:'Outcome',v:'40+ businesses advised'}],
+        stats: [{v:'40+',k:'Businesses advised'},{v:'Up to 8',k:'Team size'},{v:'End to end',k:'Delivery'},{v:'Go-to-market',k:'Core service'}],
+        barsTitle: 'From solo practice to agency',
+        bars: [{k:'Solo consulting',v:'Start',w:'20%',c:P},{k:'Agency, up to 8 people',v:'40+ clients',w:'100%',c:A}],
+        barsNote: 'Client work and company building ran in parallel: every engagement also shaped how the agency delivered.',
+        story: [
+          {h:'The model',t:'One entry point for businesses in and around the equestrian world: bring the problem, get an analysis, a solution and someone who stays until it is implemented.'},
+          {h:'What I did',t:'Business development and go-to-market for the agency, project delivery for clients, and the hiring and management of a team of up to eight.'},
+          {h:'The result',t:'More than forty businesses advised, and the agency behind several of the cases on this site.'}
+        ],
+        quote: 'Businesses came with a problem. I left them with a working solution.',
+        roles: ['Business development','Go-to-market','Team management','Project management']
+      }
+    ];
+  }
+
+  send(){
+    return (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      const form = e && e.target;
+      if (!form) return;
+      const get = (k) => (form.elements[k] && form.elements[k].value ? form.elements[k].value.trim() : '');
+      const name = get('name'), email = get('email'), msg = get('message');
+      const body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + msg;
+      const href = 'mailto:v.equesolution@gmail.com?subject=' + encodeURIComponent('Website enquiry - ' + (name || 'new message')) + '&body=' + encodeURIComponent(body);
+      window.open(href, '_blank');
+      this.setState({ sent: true });
+    };
+  }
+
+  openCase(n){
+    return (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      this.setState({ page: 'case', caseId: n }, () => window.scrollTo({ top: 0, behavior: 'auto' }));
+    };
+  }
+
+  renderVals(){
+    const p = this.state.p;
+    const page = this.state.page;
+    const accent = this.props.accentColor || '#7C4A28';
+    const v = {
+      accent: accent,
+      accentStrong: this.shade(accent, 0.76),
+      putty: accent.toLowerCase() === '#7c4a28' ? '#B7A47F' : this.shade(accent, 1.55),
+      showResults: this.props.showResults !== false,
+      isHome: page === 'home',
+      isCase: page === 'case',
+      isCases: page === 'cases',
+      goCases: this.nav('cases'),
+      isAbout: page === 'about',
+      goHome: this.nav('home'),
+      goWork: this.nav('work'),
+      goCase: this.nav('case'),
+      goAbout: this.nav('about'),
+      slideRef: this.slideRef,
+      touchStart: (e) => { this._tx = e.touches[0].clientX; },
+      touchEnd: (e) => { const d = e.changedTouches[0].clientX - (this._tx || 0); if (Math.abs(d) > 50) this.slide(d < 0 ? 1 : -1)(); },
+      slidePrev: this.slide(-1),
+      slideNext: this.slide(1),
+      sendForm: this.send(),
+      formNote: this.state.sent ? 'Your mail app should be open with the message ready - just hit send.' : 'Opens in your mail app, addressed to v.equesolution@gmail.com.',
+      navHome: page === 'home' ? '#221F19' : '#5B564B',
+      navHomeLine: page === 'home' ? accent : 'transparent',
+      navCase: (page === 'case' || page === 'cases') ? '#221F19' : '#5B564B',
+      navCaseLine: (page === 'case' || page === 'cases') ? accent : 'transparent',
+      navAbout: page === 'about' ? '#221F19' : '#5B564B',
+      navAboutLine: page === 'about' ? accent : 'transparent',
+      nBiz: Math.round(40 * p) + '+',
+      nCases: String(Math.round(8 * p)),
+      nRoi: Math.round(320 * p) + '%',
+      nLangs: String(Math.round(4 * p))
+    };
+    for (let i = 1; i <= 8; i++){
+      const on = this.state.open === i;
+      v['t' + i] = this.toggle(i);
+      v['s' + i] = on ? '\u2013' : '+';
+      v['r' + i] = on ? '1fr' : '0fr';
+      v['o' + i] = on ? 1 : 0;
+    }
+    const list = this.cases();
+    const ci = Math.min(Math.max(1, this.state.caseId || 1), list.length);
+    const c = list[ci - 1];
+    const prev = list[(ci - 2 + list.length) % list.length];
+    const next = list[ci % list.length];
+    v.cKicker = c.kicker; v.cTitle = c.title; v.cLede = c.lede;
+    v.cMeta = c.meta; v.cStats = c.stats; v.cStory = c.story; v.cRoles = c.roles;
+    v.cBarsTitle = c.barsTitle; v.cBars = c.bars; v.cBarsNote = c.barsNote;
+    v.cQuote = c.quote; v.cCover = c.cover; v.cIsAvatar = c.n === 3; v.cHasGallery = (c.gallery || []).length > 0;
+    v.cCoverSrc = c.coverSrc || ''; v.cHasCover = !!c.coverSrc; v.cNoCover = !c.coverSrc;
+    v.cCoverRatio = c.coverRatio || '16/9'; v.cCoverBoxRatio = c.coverSrc ? 'auto' : v.cCoverRatio; v.cCoverBg = c.coverSrc ? 'transparent' : 'var(--raised)'; v.cCoverPos = c.coverPos || 'center'; v.coverRef = this.coverRef; v.cCoverMaxH = this.state.coverMax ? this.state.coverMax + 'px' : 'max(260px, calc(100svh - 560px))'; v.cCoverMaxW = c.coverMaxW || 'none';
+    const side = !!c.coverSrc && (c.coverRatio || '').indexOf('/4') > -1;
+    v.cHeadDir = side ? 'row-reverse' : 'column';
+    v.cMetaDir = side ? 'column' : 'row';
+    v.cMetaFlex = side ? '1 1 240px' : '0 0 auto';
+    v.cCoverFlex = side ? '1 1 380px' : '0 0 auto';
+    v.cCoverTop = side ? '0' : 'clamp(4px,1vh,12px)';
+    v.cGalleryRatio = c.galleryRatio || '3/4';
+    v.cGalleryMin = c.galleryMin || '200px';
+    v.cGallery = c.gallery.map((id, i) => {
+      const src = (c.gallerySrc || [])[i] || '';
+      return { id: id, src: src, hasSrc: !!src, noSrc: !src };
+    });
+    v.cPrev = this.openCase(prev.n); v.cNext = this.openCase(next.n);
+    v.cPrevTitle = prev.title; v.cNextTitle = next.title;
+    for (let k = 1; k <= list.length; k++) v['c' + k] = this.openCase(k);
+    const fi = this.state.slide == null ? 4 : this.state.slide;
+    const f = list[fi];
+    const feat5 = f.n === 5;
+    v.fNum = String(fi + 1).padStart(2, '0'); v.fTotal = String(list.length).padStart(2, '0');
+    v.fKicker = f.kicker;
+    v.fTitle = feat5 ? 'A helicopter at a horse stable? Sounds crazy. Let\u2019s make it happen.' : f.title;
+    v.fLede = feat5 ? 'A shoot with no ready-made reference: horses, a helicopter, professional models and an equestrian club, coordinated across the club, a pilot, a photographer and around thirty people - in two to three weeks, built on barter instead of a six-figure budget.' : f.lede;
+    v.fImg = feat5 ? 'home-heli.jpg' : (f.coverSrc || '');
+    v.fStats = f.stats.slice(0, 3);
+    v.fGo = this.openCase(f.n);
+    const bs = !!this.state.bShown, bh = this.state.bh == null ? -1 : this.state.bh;
+    v.bRef = this.bRef; v.bDash = bs ? 0 : 1; v.bOp = bs ? 1 : 0; v.bImgT = bs ? 'none' : 'translateX(40px)';
+    v.bOut = () => this.setState({ bh: -1 });
+    for (let i = 0; i < 8; i++) {
+      const on = bh === i;
+      v['bIn' + i] = () => this.setState({ bh: i });
+      v['bOn' + i] = on; v['bZ' + i] = on ? 5 : 1;
+      v['bC' + i] = on ? '#F6F2E9' : (bh >= 0 ? 'rgba(34,31,25,.55)' : 'var(--ink)');
+      const pz = bh < 0 && this.state.bPulse === i;
+      v['bBg' + i] = on ? 'var(--accent)' : (pz ? '#FFFFFF' : 'rgba(246,242,233,.9)');
+      v['bBd' + i] = on ? 'var(--accent)' : (pz ? 'var(--accent)' : 'rgba(124,74,40,.35)');
+      v['bSh' + i] = on ? '0 10px 28px rgba(94,55,32,.28)' : (pz ? '0 0 0 6px rgba(124,74,40,.14)' : '0 2px 10px rgba(34,31,25,.06)');
+      v['bRot' + i] = on ? 'rotate(45deg)' : 'none';
+      v['bW' + i] = on ? 2.4 : 1.2; v['bR' + i] = on ? 9 : 5; v['bFill' + i] = on ? '#7C4A28' : '#F6F2E9';
+    }
+    v.menuOpen = !!this.state.menu && !!this.state.narrow;
+    v.menuLabel = this.state.menu ? 'Close' : 'Menu';
+    v.toggleMenu = () => this.setState(s => ({ menu: !s.menu }));
+    v.closeMenu = () => this.setState({ menu: false });
+    const mg = (p) => (e) => { this.setState({ menu: false }); this.nav(p)(e); };
+    v.mGoHome = mg('home'); v.mGoCases = mg('cases'); v.mGoAbout = mg('about');
+    v.navWide = !this.state.narrow; v.navNarrow = !!this.state.narrow;
+    v.bringWide = !this.state.bnarrow; v.bringNarrow = !!this.state.bnarrow;
+    v.cIndex = list.map((x) => ({
+      num: 'Case ' + String(x.n).padStart(2, '0'),
+      field: x.kicker.split('\u00b7').pop().trim(),
+      title: x.title,
+      summary: x.story[0].t,
+      statV: x.stats[0].v,
+      statK: x.stats[0].k,
+      cover: x.cover,
+      coverSrc: x.coverSrc || '',
+      hasCover: !!x.coverSrc,
+      noCover: !x.coverSrc,
+      go: this.openCase(x.n)
+    }));
+    return v;
+  }
+}
+
+</script>
+</body>
+</html>
